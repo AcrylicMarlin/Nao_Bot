@@ -2,11 +2,13 @@ from optparse import Option
 import typing
 import discord
 from discord import app_commands
+from discord.ext import commands
 from typing import Optional
+from bot_class import NaoBot
 
 
-class Info(app_commands.Group):
-    def __init__(self, client):
+class Info(commands.Cog):
+    def __init__(self, client:NaoBot):
         super().__init__(name = 'info', description='Commands for various information')
         self.client:discord.Client = client
 

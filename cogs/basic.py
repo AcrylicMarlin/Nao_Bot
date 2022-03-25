@@ -1,8 +1,9 @@
 import discord
 from discord import app_commands
+from discord.ext import commands
 
 
-class Basic(app_commands.Group):
+class Basic(commands.Cog):
     def __init__(self, client):
         super().__init__(description='Basic Commands')
         self.client:discord.Client = client
@@ -15,3 +16,6 @@ class Basic(app_commands.Group):
     @app_commands.describe(message='Message you want me to say')
     async def say(self, interaction:discord.Interaction, message:str):
         await interaction.response.send_message(f'{message}')
+
+async def setup(client):
+    await client.add_cog(Basic(client))

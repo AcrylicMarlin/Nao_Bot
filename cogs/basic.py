@@ -5,8 +5,7 @@ from discord.ext import commands
 
 class Basic(commands.Cog):
     def __init__(self, client):
-        super().__init__(description='Basic Commands')
-        self.client:discord.Client = client
+        self.client:commands.Bot = client
     
     @app_commands.command(name='latency')
     async def ping(self, interaction:discord.Interaction):

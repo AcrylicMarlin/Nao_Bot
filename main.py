@@ -1,19 +1,13 @@
 # Builtins
 import asyncio
-import os
-from re import A
 
 # External Libraries
 import discord
 from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
-import aiohttp
-import asyncpg
 
 # Internal Functionality
-import cogs.basic as basic
-import cogs.info as info
 from bot_class import NaoBot
 
 # Loads env variables
@@ -29,5 +23,5 @@ activity = discord.Activity(name = 'for your commands', type = discord.ActivityT
 client = NaoBot(intents = intents, status=status, activity=activity)
 
 if __name__ == '__main__':
-    client.loop.run_until_complete(client.run())
+    asyncio.run(client.run())
 

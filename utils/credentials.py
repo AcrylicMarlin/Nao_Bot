@@ -27,3 +27,4 @@ class Nao_Credentials(Enum):
     DISCORD:str = TOKEN
     TINYURL:str = TINYAPITOKEN
     NAO_NATION:discord.Object = NAO_NATION
+    DATABASE:str = 'Nao_Data.db'

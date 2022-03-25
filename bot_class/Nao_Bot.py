@@ -1,13 +1,16 @@
 from typing import Dict, Any
 from pathlib import Path
+import sys
+import traceback
 
 
 from discord.ext import commands
 import discord
 import asyncpg
 import aiohttp
+import asqlite
 
-from items import Nao_Credentials, CogLoadFailure
+from utils import Nao_Credentials, CogLoadFailure
 
 
 class NaoBot(commands.Bot):
@@ -16,7 +19,7 @@ class NaoBot(commands.Bot):
     __status:discord.Status
     __activity:discord.Activity
     __credentials:Nao_Credentials
-    __pool:asyncpg.Pool
+    __db:asqlite.Connection
     __persistent_views:bool
 
     def __init__(self, *,
@@ -35,6 +38,7 @@ class NaoBot(commands.Bot):
 
     async def on_ready(self):
         print('Nao_Bot is operational')
+        print(self.guilds)
     
     async def setup_commands(self):
         for file in Path('cogs').glob('**/*.py'):
@@ -46,13 +50,21 @@ class NaoBot(commands.Bot):
 
             except Exception as e:
                 raise CogLoadFailure(file.stem, e)
-        # await self.tree.sync(guild=self.__credentials.NAO_NATION.value)
         ...
     async def setup_hook(self):
         self.activity = self.__activity
         self.status = self.__status
-        self.__pool = await asyncpg.create_pool(**self.__credentials.POSTGRES.value)
-        await self.__pool.execute('CREATE TABLE IF NOT EXISTS setups (id TEXT PRIMARY KEY, persistent_message TEXT)')
+        self.connect_db = asqlite.connect
+        tables = [
+            'CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)',
+            'CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)'
+        ]
+        async with self.connect_db(self.__credentials.DATABASE.value) as con:
+            async with con.cursor() as cur:
+                for table in tables:
+                    await cur.execute(table)
+
+
         await self.setup_commands()
     
 
@@ -63,3 +75,24 @@ class NaoBot(commands.Bot):
         except KeyboardInterrupt:
             await self.__pool.close()
             await self.close()
+
+    
+
+    async def on_guild_join(self, guild:discord.Guild):
+        async with self.connect_db(self.__credentials.DATABASE.value) as con:
+            async with con.cursor() as cur:
+                await cur.execute('INSERT INTO guilds VALUES (:id, :name, :count)', {'id':guild.id, 'name':guild.name, 'count': guild.member_count if guild.member_count else 1})
+                print('Joined {}'.format(guild.name))
+
+
+    async def on_guild_remove(self, guild:discord.Guild):
+        async with self.connect_db(self.__credentials.DATABASE.value) as con:
+            async with con.cursor() as cur:
+                await cur.execute('DELETE FROM guilds WHERE id = :id', {'id':guild.id})
+    
+
+
+    async def on_command_error(self, ctx:commands.Context, error: commands.errors.CommandError) -> None:
+        print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
+        traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+        ...

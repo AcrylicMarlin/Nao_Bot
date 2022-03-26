@@ -6,7 +6,6 @@ import traceback
 
 from discord.ext import commands
 import discord
-import asyncpg
 import aiohttp
 import asqlite
 
@@ -19,8 +18,8 @@ class NaoBot(commands.Bot):
     __status:discord.Status
     __activity:discord.Activity
     __credentials:Nao_Credentials
-    __db:asqlite.Connection
     __persistent_views:bool
+    connect_db = asqlite.connect
 
     def __init__(self, *,
     intents:discord.Intents,
@@ -54,7 +53,6 @@ class NaoBot(commands.Bot):
     async def setup_hook(self):
         self.activity = self.__activity
         self.status = self.__status
-        self.connect_db = asqlite.connect
         tables = [
             'CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)',
             'CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)'
@@ -89,10 +87,11 @@ class NaoBot(commands.Bot):
         async with self.connect_db(self.__credentials.DATABASE.value) as con:
             async with con.cursor() as cur:
                 await cur.execute('DELETE FROM guilds WHERE id = :id', {'id':guild.id})
-    
 
 
     async def on_command_error(self, ctx:commands.Context, error: commands.errors.CommandError) -> None:
         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
         ...
+
+    

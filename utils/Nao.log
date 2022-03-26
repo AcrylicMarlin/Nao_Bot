@@ -1,0 +1,56 @@
+2022-03-26 17:40:23,608 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:40:23,609 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:40:23,968 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 17:40:24,189 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-d4p8",{"micros":192592,"calls":["discord-sessions-blue-prd-2-94",{"micros":191403,"calls":["start_session",{"micros":172696,"calls":["discord-api-7fbf95f445-rdpvq",{"micros":165393,"calls":["get_user",{"micros":13606},"add_authorized_ip",{"micros":4677},"get_guilds",{"micros":87161},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":8621,"calls":[]}]}]}] (Session ID: 2aebcbafca88471a41bcc8ec35bef990).
+2022-03-26 17:42:21,284 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:42:21,285 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:42:21,880 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 17:42:22,037 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-j4b8",{"micros":119360,"calls":["discord-sessions-blue-prd-2-171",{"micros":117348,"calls":["start_session",{"micros":73578,"calls":["discord-api-7fbf95f445-qs8w8",{"micros":67976,"calls":["get_user",{"micros":13221},"add_authorized_ip",{"micros":4196},"get_guilds",{"micros":9390},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":11423,"calls":[]}]}]}] (Session ID: 303df7b6cc7c22a0896773392ec9507e).
+2022-03-26 17:46:01,046 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:46:01,047 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:46:01,663 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 17:46:01,788 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-dg2t",{"micros":91079,"calls":["discord-sessions-blue-prd-2-80",{"micros":88419,"calls":["start_session",{"micros":39729,"calls":["discord-api-7fbf95f445-gffmg",{"micros":36397,"calls":["get_user",{"micros":6631},"add_authorized_ip",{"micros":1276},"get_guilds",{"micros":5224},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":13038,"calls":[]}]}]}] (Session ID: d547d0f21b6d36c2e423418eb5a6abe7).
+2022-03-26 17:46:07,286 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:46:07,287 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:46:07,456 - asyncio - default_exception_handler - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001B5F2749C00>, 15039.234)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001B5F2734DC0>
+2022-03-26 17:46:07,457 - asyncio - default_exception_handler - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001B5F2734670>
+transport: <_ProactorSocketTransport fd=744 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Users\Marlin\AppData\Local\Programs\Python\Python310\lib\asyncio\sslproto.py", line 684, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Marlin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 361, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Users\Marlin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 397, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2022-03-26 17:49:17,347 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:49:17,347 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:49:17,756 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 17:49:17,951 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-gs9q",{"micros":158801,"calls":["discord-sessions-blue-prd-2-12",{"micros":157525,"calls":["start_session",{"micros":126782,"calls":["discord-api-7fbf95f445-ht5bh",{"micros":122998,"calls":["get_user",{"micros":7397},"add_authorized_ip",{"micros":2283},"get_guilds",{"micros":60449},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: c0152ee6459f8f78ca7e974e9f9a3a73).
+2022-03-26 17:50:07,284 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:50:07,285 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:50:07,572 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 17:50:07,680 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-n7jb",{"micros":74447,"calls":["discord-sessions-blue-prd-2-154",{"micros":67603,"calls":["start_session",{"micros":46384,"calls":["discord-api-7fbf95f445-66vmn",{"micros":42060,"calls":["get_user",{"micros":7697},"add_authorized_ip",{"micros":1322},"get_guilds",{"micros":10414},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":19872,"calls":[]}]}]}] (Session ID: 655554ad89246b3c6ab2451691c2ef55).
+2022-03-26 17:51:47,483 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:51:47,483 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:51:47,900 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 17:51:47,990 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-n9tx",{"micros":56446,"calls":["discord-sessions-blue-prd-2-73",{"micros":54463,"calls":["start_session",{"micros":39117,"calls":["discord-api-7fbf95f445-c92fc",{"micros":34895,"calls":["get_user",{"micros":8053},"add_authorized_ip",{"micros":1405},"get_guilds",{"micros":4832},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":12578,"calls":[]}]}]}] (Session ID: 84a04226c1fb93d0c4b93fc975a60a31).
+2022-03-26 17:59:24,302 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 17:59:24,303 - discord.client - login - INFO - logging in using static token
+2022-03-26 17:59:24,871 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 17:59:25,182 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-g8js",{"micros":274933,"calls":["discord-sessions-blue-prd-2-137",{"micros":268436,"calls":["start_session",{"micros":249842,"calls":["discord-api-7fbf95f445-bkpmp",{"micros":238874,"calls":["get_user",{"micros":27977},"add_authorized_ip",{"micros":7728},"get_guilds",{"micros":124351},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":11228,"calls":[]}]}]}] (Session ID: 66e0f57326bbc02e5b7260faf1c3feb3).
+2022-03-26 18:04:27,987 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 18:04:27,988 - discord.client - login - INFO - logging in using static token
+2022-03-26 18:04:28,461 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 18:04:28,718 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-lkt7",{"micros":224505,"calls":["discord-sessions-blue-prd-2-29",{"micros":221112,"calls":["start_session",{"micros":199494,"calls":["discord-api-7fbf95f445-kxm2b",{"micros":194320,"calls":["get_user",{"micros":24456},"add_authorized_ip",{"micros":8518},"get_guilds",{"micros":126131},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":19979,"calls":[]}]}]}] (Session ID: 80052b974bcfaf50fccaf0062638b0be).
+2022-03-26 18:05:16,600 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 18:05:16,601 - discord.client - login - INFO - logging in using static token
+2022-03-26 18:05:17,038 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 18:05:17,248 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-4rcz",{"micros":179034,"calls":["discord-sessions-blue-prd-2-113",{"micros":168805,"calls":["start_session",{"micros":146841,"calls":["discord-api-7fbf95f445-hzdw9",{"micros":142743,"calls":["get_user",{"micros":6283},"add_authorized_ip",{"micros":3692},"get_guilds",{"micros":100312},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":7441,"calls":[]}]}]}] (Session ID: a71c55db57877bd80726c041ac3238de).
+2022-03-26 18:07:52,545 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-26 18:07:52,545 - discord.client - login - INFO - logging in using static token
+2022-03-26 18:07:53,111 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-26 18:07:53,284 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-6txx",{"micros":119880,"calls":["discord-sessions-blue-prd-2-173",{"micros":118789,"calls":["start_session",{"micros":94595,"calls":["discord-api-7fbf95f445-cc4ld",{"micros":89955,"calls":["get_user",{"micros":6781},"add_authorized_ip",{"micros":1837},"get_guilds",{"micros":26259},"coros_wait",{"micros":17}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":9859,"calls":[]}]}]}] (Session ID: f96899a3a07b5863acd24980fb91aa64).

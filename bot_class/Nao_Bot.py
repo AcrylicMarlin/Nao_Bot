@@ -12,7 +12,16 @@ import asqlite
 
 from utils import Nao_Credentials, CogLoadFailure
 
-
+log_format = (
+        '%(asctime)s - '
+        '%(name)s - '
+        '%(funcName)s - '
+        '%(levelname)s - '
+        '%(message)s'
+)
+# Setup logging using the above format
+import logging
+logging.basicConfig(format=log_format, level=logging.INFO, filename='utils/Nao.log')
 class NaoBot(commands.Bot):
     __intents:discord.Intents
     NAO_NATION:discord.Object
@@ -96,3 +105,9 @@ class NaoBot(commands.Bot):
         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
         ...
+
+        # Everytime a command is invoked, this function is called
+    async def on_command_completion(self, ctx:commands.Context) -> None:
+        logging.info(f'{ctx.author.name} used command {ctx.command}')
+    
+    

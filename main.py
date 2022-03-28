@@ -5,13 +5,12 @@ import asyncio
 import discord
 from discord import app_commands
 from discord.ext import commands
-from dotenv import load_dotenv
+
 
 # Internal Functionality
 from bot_class import NaoBot
 
-# Loads env variables
-load_dotenv()
+
 
 
 # Creating discord functionality

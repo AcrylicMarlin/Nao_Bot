@@ -23,7 +23,7 @@ POSTGRES = {"user":P_USER, "password":P_PASS, "database":P_DB}
 # 2. Cleaner and easier to pass around files.
 # This never needs to be instantiated
 class Nao_Credentials(Enum):
-    POSTGRES:Dict[str, Any] = POSTGRES
+    POSTGRES:Dict[str, Any] = POSTGRES # I have postgres information here, but I don't think I will use it
     DISCORD:str = TOKEN
     TINYURL:str = TINYAPITOKEN
     NAO_NATION:discord.Object = NAO_NATION

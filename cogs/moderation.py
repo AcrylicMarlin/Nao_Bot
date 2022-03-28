@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from pydoc import describe
 from typing import Optional
 import uuid
@@ -12,6 +13,17 @@ from utils import Nao_Credentials
 class Moderation(commands.Cog):
     def __init__(self, client:NaoBot):
         self.client = client
+=======
+import discord
+from discord.ext import commands
+from discord import app_commands
+
+from utils import Nao_Credentials
+
+class Moderation(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+>>>>>>> 3e2fe87720700f61acf98ef9392f919d503cd124
 
     @app_commands.command(name='kick')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
@@ -23,6 +35,7 @@ class Moderation(commands.Cog):
             await member.send('You have been kicked from {} for {}'.format(interaction.guild.name, reason))
         except Exception:
             pass
+<<<<<<< HEAD
     
     @app_commands.command(name='ban')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
@@ -113,3 +126,6 @@ class Moderation(commands.Cog):
 
 async def setup(client):
     client.add_cog(Moderation(client))
+=======
+    
+>>>>>>> 3e2fe87720700f61acf98ef9392f919d503cd124

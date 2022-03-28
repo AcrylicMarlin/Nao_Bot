@@ -54,3 +54,47 @@ AttributeError: 'NoneType' object has no attribute 'send'
 2022-03-26 18:07:52,545 - discord.client - login - INFO - logging in using static token
 2022-03-26 18:07:53,111 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
 2022-03-26 18:07:53,284 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-6txx",{"micros":119880,"calls":["discord-sessions-blue-prd-2-173",{"micros":118789,"calls":["start_session",{"micros":94595,"calls":["discord-api-7fbf95f445-cc4ld",{"micros":89955,"calls":["get_user",{"micros":6781},"add_authorized_ip",{"micros":1837},"get_guilds",{"micros":26259},"coros_wait",{"micros":17}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":9859,"calls":[]}]}]}] (Session ID: f96899a3a07b5863acd24980fb91aa64).
+2022-03-28 11:09:10,419 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-28 11:09:10,421 - discord.client - login - INFO - logging in using static token
+2022-03-28 11:09:10,693 - asyncio - default_exception_handler - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001A4D6B42380>, 266118.906)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001A4D6ADFDF0>
+2022-03-28 11:09:10,694 - asyncio - default_exception_handler - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001A4D6ADD4E0>
+transport: <_ProactorSocketTransport fd=508 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Python310\lib\asyncio\sslproto.py", line 684, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 361, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 397, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2022-03-28 11:11:38,754 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-28 11:11:38,759 - discord.client - login - INFO - logging in using static token
+2022-03-28 11:11:39,280 - asyncio - default_exception_handler - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000164846BA320>, 266267.312)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000164846A8070>
+2022-03-28 11:11:39,282 - asyncio - default_exception_handler - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x00000164846A8610>
+transport: <_ProactorSocketTransport fd=688 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Python310\lib\asyncio\sslproto.py", line 684, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 361, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 397, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2022-03-28 11:12:19,162 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-28 11:12:19,165 - discord.client - login - INFO - logging in using static token
+2022-03-28 11:12:19,671 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-28 11:12:19,931 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-td5b",{"micros":224075,"calls":["discord-sessions-blue-prd-2-16",{"micros":222867,"calls":["start_session",{"micros":205779,"calls":["discord-api-79988bc58-b4zvg",{"micros":197093,"calls":["get_user",{"micros":27848},"add_authorized_ip",{"micros":5506},"get_guilds",{"micros":96442},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":13618,"calls":[]}]}]}] (Session ID: 00b5f477252fb3c1d254693a4101b465).
+2022-03-28 11:20:21,102 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-28 11:20:21,105 - discord.client - login - INFO - logging in using static token
+2022-03-28 11:20:21,587 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-28 11:20:21,772 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-jl60",{"micros":149704,"calls":["discord-sessions-blue-prd-2-59",{"micros":148791,"calls":["start_session",{"micros":119134,"calls":["discord-api-79988bc58-k8rb9",{"micros":113856,"calls":["get_user",{"micros":10760},"add_authorized_ip",{"micros":5236},"get_guilds",{"micros":59904},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":0,"calls":[]}]}]}] (Session ID: d891808da29da6924a7da2439e1a543c).
+2022-03-28 11:21:26,184 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-28 11:21:26,186 - discord.client - login - INFO - logging in using static token
+2022-03-28 11:21:26,710 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-28 11:21:26,934 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-g2f3",{"micros":188154,"calls":["discord-sessions-blue-prd-2-4",{"micros":184984,"calls":["start_session",{"micros":144242,"calls":["discord-api-79988bc58-ltl22",{"micros":138675,"calls":["get_user",{"micros":15237},"add_authorized_ip",{"micros":4604},"get_guilds",{"micros":49123},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":4323,"calls":[]}]}]}] (Session ID: 723ff87b5eab79ee0fa9df107fb591ee).

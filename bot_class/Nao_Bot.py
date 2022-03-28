@@ -10,10 +10,6 @@ import asqlite
 
 from utils import Nao_Credentials, CogLoadFailure
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3e2fe87720700f61acf98ef9392f919d503cd124
 log_format = (
         '%(asctime)s - '
         '%(name)s - '
@@ -24,11 +20,6 @@ log_format = (
 # Setup logging using the above format
 import logging
 logging.basicConfig(format=log_format, level=logging.INFO, filename='utils/Nao.log')
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 3e2fe87720700f61acf98ef9392f919d503cd124
 class NaoBot(commands.Bot):
     __intents:discord.Intents
     NAO_NATION:discord.Object
@@ -63,9 +54,10 @@ class NaoBot(commands.Bot):
         for file in Path('cogs').glob('**/*.py'):
             *tree, _ = file.parts
             try:
-                cog = f"{'.'.join(tree)}.{file.stem}"
-                await self.load_extension(cog)
-                print(f"{cog} loaded successfully!")
+                if not file.stem.startswith('_'):
+                    cog = f"{'.'.join(tree)}.{file.stem}"
+                    await self.load_extension(cog)
+                    print(f"{cog} loaded successfully!")
 
             except Exception as e:
                 raise CogLoadFailure(file.stem, e)
@@ -89,6 +81,7 @@ class NaoBot(commands.Bot):
 
 
         await self.setup_commands()
+        
     
 
     async def run(self):
@@ -119,16 +112,8 @@ class NaoBot(commands.Bot):
         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
         ...
 
-<<<<<<< HEAD
-        # Everytime a command is invoked, this function is called
-    async def on_command_completion(self, ctx:commands.Context) -> None:
-        logging.info(f'{ctx.author.name} used command {ctx.command}')
-    
-    
-=======
     # Everytime a command is invoked, this function is called
     async def on_command_completion(self, ctx:commands.Context) -> None:
         logging.info(f'{ctx.author.name} used command {ctx.command}')
     
     
->>>>>>> 3e2fe87720700f61acf98ef9392f919d503cd124

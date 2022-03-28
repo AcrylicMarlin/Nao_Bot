@@ -14,8 +14,7 @@ from bot_class import NaoBot
 
 
 # Creating discord functionality
-intents = discord.Intents.default()
-intents.message_content = True
+intents = discord.Intents.all()
 status = discord.Status.dnd
 activity = discord.Activity(name = 'for your commands', type = discord.ActivityType.watching, url = 'https://www.youtube.com/watch?v=o-YBDTqX_ZU')
 

@@ -1,4 +1,5 @@
 
+import datetime
 from typing import List, Optional
 import uuid
 
@@ -26,6 +27,9 @@ class Moderation(commands.Cog):
         except Exception:
             pass
     
+
+
+
     @app_commands.command(name='ban')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
     @app_commands.describe(member='Member to ban', reason='Reason for banning')
@@ -37,9 +41,12 @@ class Moderation(commands.Cog):
         except Exception:
             pass
 
+
+
+
     @app_commands.command(name='unban')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
-    @app_commands.describe(member='Member to unban')
+    @app_commands.describe(id = 'ID of the banned user', reason = 'Reason for unban')
     async def unban(self, interaction:discord.Interaction, id: int, *, reason: str = None):
         try:
             member = await interaction.guild.fetch_ban(id)
@@ -48,6 +55,9 @@ class Moderation(commands.Cog):
         except NotFound:
             await interaction.response.send_message('Could not find ban with id {}'.format(id))
     
+
+
+
     @app_commands.command(name='purge')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
     @app_commands.describe(limit='Number of messages to delete')
@@ -58,16 +68,48 @@ class Moderation(commands.Cog):
         await interaction.channel.purge(limit=limit)
         await interaction.response.send_message('Purged {} messages'.format(limit), ephemeral=True)
 
+
+
+
     
-    @app_commands.command(name='mute')
+    @app_commands.command(name='timeout')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
-    @app_commands.describe(member='Member to mute', reason='Reason for muting')
-    async def timeout(self, interaction:discord.Interaction, member:discord.Member, *, reason:str=None):
+    @app_commands.describe(member='Member to timeout', time = 'Amount of time', reason='Reason for timeout')
+    async def timeout(self, interaction:discord.Interaction, member:discord.Member, time:str, *, reason:str=None):
+        if time.endswith('s'):
+            time = int(time[:-1])
+            if time > 60:
+                return await interaction.response.send_message('You can only provide up to 60 seconds')
+        elif time.endswith('m'):
+            time = int(time[:-1]) * 60
+            if time > 3600:
+                return await interaction.response.send_message('You can only provide up to 60 minutes')
+        elif time.endswith('h'):
+            time = int(time[:-1]) * 3600
+            if time > 86400:
+                return await interaction.response.send_message('You can only provide up to 24 hours')
+        elif time.endswith('d'):
+            time = int(time[:-1]) * 86400
+            if time > 2592000:
+                return await interaction.response.send_message('You can only provide up to 30 days')
+        else:
+            return await interaction.response.send_message('Incorrect time format. Time must be in seconds [s], minutes [m], hours [h] or days [d] and must be less than thirty days.')
+        
         if not interaction.user.guild_permissions.moderate_members:
             await interaction.response.send_message('You do not have permission to use this command')
             return
         else:
-            await member.timed_out_until(interaction.guild, reason=reason)
+            timed = datetime.timedelta(seconds=time)
+            await member.timeout(timed, reason=reason)
+
+        try:
+            amount = datetime.datetime.now() + timed
+            await member.send('You have been timed out until <R:{}:t> for {}'.format(int(amount.timestamp()), reason))
+        except Exception:
+            pass
+
+
+
 
     @app_commands.command(name='warn')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
@@ -79,43 +121,59 @@ class Moderation(commands.Cog):
         else:
             async with self.client.connect_db(Nao_Credentials.DATABASE.value) as con:
                 async with con.cursor() as cur:
-                    warn_id = uuid.uuid4()
+                    warn_id = uuid.uuid4().__str__()
                     await cur.execute(
-                        'INSERT INTO warns VALUES (:id, :guild_id, :user_id, :reason, :moderator_id, :time)',
+                        'INSERT INTO warns VALUES (:id, :guild_id, :user_id, :moderator_id, :reason, :time)',
                         {
                             'id':warn_id,
-                            'guild_id':interaction.guild.id,
-                            'user_id':member.id,
+                            'guild_id':str(interaction.guild.id),
+                            'user_id':str(member.id),
                             'reason':reason,
-                            'moderator_id':interaction.user.id,
+                            'moderator_id':str(interaction.user.id),
                             'time':int(interaction.created_at.timestamp())
                         }
                     )
+            await interaction.response.send_message('Warned {} for {}'.format(member.mention, reason))
     
-    @app_commands.command(name = 'get warns')
+
+
+
+    @app_commands.command(name = 'warns')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
     @app_commands.describe(member='Member to get warns from. Defaults to yourself')
     async def get_warns(self, interaction:discord.Interaction, member:Optional[discord.Member]):
+        if not member:
+            member = interaction.user
+        guild = interaction.guild
         await interaction.response.send_message(f'Gathering {member.name}\' warns...')
         pages:List[discord.Embed] = []
         async with self.client.connect_db(Nao_Credentials.DATABASE.value) as con:
             async with con.cursor() as cur:
-                embed = discord.Embed()
-                embed.title = f"Page {i}"
-                description = ''
-                data = await (await cur.execute('SELECT * FROM warns WHERE user_id = :user_id AND guild_id = :guild_id')).fetchall()
+                data = await (await cur.execute('SELECT * FROM warns WHERE user_id = :user_id AND guild_id = :guild_id', {'user_id':member.id, 'guild_id':interaction.guild.id})).fetchall()
+                if not data:
+                    await interaction.channel.send('No warns found')
+                    return
+                
+                
                 i=0
                 for row in data:
-                    id, guild_id, user_id, reason, moderator_id, time = row
-                    moderator = await interaction.guild.get_member(moderator_id)
-                    description += f"{i}. {id} - {reason} - Given by: {moderator} - <:t>{time}<:R>"
+                    embed = discord.Embed()
+                    embed.title = f"Page {i}"
+                    id, guild_id, user_id, moderator_id, reason, time = row
+                    moderator = await interaction.guild.fetch_member(moderator_id)
+                    embed.description = f"""
+ID: `{id}`
+Guild: {guild.name}
+User: {member.mention}
+Reason: ```{reason}```
+Moderator: {moderator.mention}
+Time: <t:{time}:R>
+"""
                     i+=1
-                embed.description = description
-                pages.append(embed)
-                embed.set_footer()
+                    pages.append(embed)
         
         view = Warns_Pageinator(pages)
-        view.message = await interaction.channel.send(view = view)
+        view.message = await interaction.channel.send(embed = pages[0], view = view)
         
         ...
 

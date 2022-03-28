@@ -15,10 +15,9 @@ class Trials(commands.Bot):
     @app_commands.command(name = 'pages')
     @app_commands.guilds(Nao_Credentials.NAO_NATION.value)
     async def pages(self, interaction:discord.Interaction):
-        await interaction.response.send_message('Gathering warns...', ephemeral=True)
-        view = Warns_Pageinator(1)
-        view.message = await interaction.channel.send("Users Warns", view=view)
         ...
+    
+    
 
 
 async def setup(client):

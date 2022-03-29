@@ -1,3 +1,4 @@
+from json import JSONDecodeError
 from typing import Dict, Any
 from pathlib import Path
 import sys
@@ -9,6 +10,7 @@ import discord
 import asqlite
 
 from utils import Nao_Credentials, CogLoadFailure
+from utils.errors import NotDmChannel
 
 log_format = (
         '%(asctime)s - '
@@ -109,7 +111,21 @@ class NaoBot(commands.Bot):
                 await cur.execute('DELETE FROM guilds WHERE id = :id', {'id':guild.id})
 
 
-    async def on_command_error(self, ctx:commands.Context, error: commands.errors.CommandError) -> None:
+    async def on_command_error(self, ctx:commands.Context, error: commands.errors.CommandError) -> None:   
+        embed = discord.Embed()
+        embed.title = 'Error'
+        embed.color = discord.Color.red()
+        embed.set_footer(text='Nao Nation', icon_url=self.user.avatar.url)
+        if isinstance(error, commands.errors.CheckFailure):
+            if isinstance(error, NotDmChannel):
+                embed.description = 'This command can only be used in a DM channel.'
+                return await ctx.send(embed=embed)
+        
+        if isinstance(error, commands.errors.CommandInvokeError):
+            error=error.original
+            if isinstance(error, JSONDecodeError):
+                embed.description = 'Something went wrong while parsing the JSON response from the API.\nPlease try again later.'
+                return await ctx.send(embed=embed)
         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
         ...

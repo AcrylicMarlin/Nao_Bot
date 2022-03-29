@@ -9,6 +9,7 @@ load_dotenv()
 # Gathering Credentials
 TOKEN = os.environ.get('TOKEN')
 TINYAPITOKEN = os.environ.get('TINYAPITOKEN')
+CDNTOKEN = os.environ.get('CDNTOKEN')
 NAO_NATION_ID = 695025143264706622
 NAO_NATION = discord.Object(id = NAO_NATION_ID)
 P_USER = os.environ.get('P_USER')
@@ -16,6 +17,7 @@ P_PASS = os.environ.get('P_PASS')
 P_PORT = os.environ.get('P_PORT')
 P_DB = os.environ.get('P_DB')
 POSTGRES = {"user":P_USER, "password":P_PASS, "database":P_DB}
+
 
 
 # I used an Enum class here because:
@@ -28,3 +30,4 @@ class Nao_Credentials(Enum):
     TINYURL:str = TINYAPITOKEN
     NAO_NATION:discord.Object = NAO_NATION
     DATABASE:str = 'Nao_Data.db'
+    CDN:str = CDNTOKEN

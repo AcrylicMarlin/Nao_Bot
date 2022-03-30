@@ -1,5 +1,6 @@
 # Builtins
 import asyncio
+import logging
 import sys
 import traceback
 
@@ -35,6 +36,7 @@ async def on_error(interaction: discord.Interaction, command:app_commands.AppCom
     
     print('Ignoring {} in command {}:'.format(type(error), command.name), file=sys.stderr)
     traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+    logging.error(f'Ignoring {type(error)} in command {command.name}: {error}')
     ...
 if __name__ == '__main__':
     asyncio.run(client.run())

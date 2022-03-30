@@ -1776,3 +1776,48 @@ AttributeError: 'NoneType' object has no attribute 'send'
 2022-03-30 10:14:29,152 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT, guild_id TEXT, user_id TEXT, moderator_id TEXT, reason TEXT, time INT)
 2022-03-30 10:14:29,675 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
 2022-03-30 10:14:29,822 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-chzj",{"micros":79969,"calls":["discord-sessions-blue-prd-2-75",{"micros":78417,"calls":["start_session",{"micros":50149,"calls":["discord-api-5496648666-mrvlr",{"micros":45225,"calls":["get_user",{"micros":7630},"add_authorized_ip",{"micros":3435},"get_guilds",{"micros":5001},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":20113,"calls":[]}]}]}] (Session ID: 0154edac408729d3ea130e19a5715692).
+2022-03-30 10:39:05,680 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-30 10:39:05,682 - discord.client - login - INFO - logging in using static token
+2022-03-30 10:39:05,995 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-30 10:39:05,996 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)
+2022-03-30 10:39:05,996 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT, guild_id TEXT, user_id TEXT, moderator_id TEXT, reason TEXT, time INT)
+2022-03-30 10:39:07,045 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-30 10:39:07,167 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-f6j7",{"micros":86305,"calls":["discord-sessions-blue-prd-2-37",{"micros":81575,"calls":["start_session",{"micros":72527,"calls":["discord-api-5496648666-wmxvh",{"micros":66118,"calls":["get_user",{"micros":18651},"add_authorized_ip",{"micros":3303},"get_guilds",{"micros":8472},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":686,"calls":[]}]}]}] (Session ID: 0d8a1cfa9e8ad7ec8a4992ec1d112496).
+2022-03-30 10:40:42,718 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-30 10:40:42,721 - discord.client - login - INFO - logging in using static token
+2022-03-30 10:40:42,927 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-30 10:40:42,928 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)
+2022-03-30 10:40:42,928 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT, guild_id TEXT, user_id TEXT, moderator_id TEXT, reason TEXT, time INT)
+2022-03-30 10:40:43,487 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-30 10:40:43,613 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-h4nl",{"micros":86468,"calls":["discord-sessions-blue-prd-2-157",{"micros":85513,"calls":["start_session",{"micros":70911,"calls":["discord-api-5496648666-cqw55",{"micros":63131,"calls":["get_user",{"micros":9175},"add_authorized_ip",{"micros":1827},"get_guilds",{"micros":19873},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: cd3b0001cd660500450d414052dd8120).
+2022-03-30 10:40:50,091 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member:
+ This command cannot be used in a DM channel. 
+ <traceback object at 0x000001AEDCFDEFC0>
+2022-03-30 10:42:20,787 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-30 10:42:20,789 - discord.client - login - INFO - logging in using static token
+2022-03-30 10:42:20,976 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-30 10:42:20,977 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)
+2022-03-30 10:42:20,978 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT, guild_id TEXT, user_id TEXT, moderator_id TEXT, reason TEXT, time INT)
+2022-03-30 10:42:21,529 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-30 10:42:21,739 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ft1q",{"micros":179822,"calls":["discord-sessions-blue-prd-2-139",{"micros":172338,"calls":["start_session",{"micros":142432,"calls":["discord-api-5496648666-z29sf",{"micros":132298,"calls":["get_user",{"micros":16052},"add_authorized_ip",{"micros":7733},"get_guilds",{"micros":12879},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":13498,"calls":[]}]}]}] (Session ID: dde723846648f83c9fd2ae19ccf49091).
+2022-03-30 10:42:27,241 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member:
+ This command cannot be used in a DM channel. 
+ <traceback object at 0x0000018253141C00>
+2022-03-30 10:42:57,251 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-30 10:42:57,253 - discord.client - login - INFO - logging in using static token
+2022-03-30 10:42:57,436 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-30 10:42:57,436 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)
+2022-03-30 10:42:57,437 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT, guild_id TEXT, user_id TEXT, moderator_id TEXT, reason TEXT, time INT)
+2022-03-30 10:42:58,318 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-30 10:42:58,453 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-822j",{"micros":101628,"calls":["discord-sessions-blue-prd-2-2",{"micros":95066,"calls":["start_session",{"micros":61109,"calls":["discord-api-5496648666-b6qqr",{"micros":46326,"calls":["get_user",{"micros":12084},"add_authorized_ip",{"micros":3971},"get_guilds",{"micros":5452},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":11550,"calls":[]}]}]}] (Session ID: a19b3840075939ecf2dedd4b624d40ee).
+2022-03-30 10:43:03,170 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member:
+ This command cannot be used in a DM channel.
+2022-03-30 10:43:18,182 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-30 10:43:18,184 - discord.client - login - INFO - logging in using static token
+2022-03-30 10:43:18,358 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-30 10:43:18,359 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)
+2022-03-30 10:43:18,360 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT, guild_id TEXT, user_id TEXT, moderator_id TEXT, reason TEXT, time INT)
+2022-03-30 10:43:18,924 - discord.http - request - WARNING - We are being rate limited. Retrying in 2.38 seconds. Handled under the bucket "None:695025143264706622:/applications/{application_id}/guilds/{guild_id}/commands"
+2022-03-30 10:43:21,634 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-30 10:43:21,746 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-fsf5",{"micros":82240,"calls":["discord-sessions-blue-prd-2-30",{"micros":81211,"calls":["start_session",{"micros":45892,"calls":["discord-api-5496648666-8mhkc",{"micros":41463,"calls":["get_user",{"micros":6666},"add_authorized_ip",{"micros":1960},"get_guilds",{"micros":7525},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":17369,"calls":[]}]}]}] (Session ID: 9348ff6b15c7514663dc937f56a12c15).
+2022-03-30 10:43:25,567 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member: This command cannot be used in a DM channel.

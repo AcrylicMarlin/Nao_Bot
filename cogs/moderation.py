@@ -7,7 +7,7 @@ import discord
 from discord.ext import commands
 from discord import NotFound, app_commands
 
-from bot_class import NaoBot
+from bot_classes import NaoBot
 from utils import Nao_Credentials
 from views import Warns_Pageinator
 

@@ -3,7 +3,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from utils import Nao_Credentials
-from bot_class import NaoBot
+from bot_classes import NaoBot
 
 
 class Basic(commands.Cog):

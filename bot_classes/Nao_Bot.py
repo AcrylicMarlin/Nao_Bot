@@ -23,6 +23,7 @@ log_format = (
 # Setup logging using the above format
 import logging
 logging.basicConfig(format=log_format, level=logging.INFO, filename='utils/Nao.log')
+
 class NaoBot(commands.Bot):
     __intents:discord.Intents
     NAO_NATION:discord.Object
@@ -35,13 +36,14 @@ class NaoBot(commands.Bot):
     def __init__(self, *,
     intents:discord.Intents,
     status:discord.Status,
-    activity:discord.Activity):
+    activity:discord.Activity,
+    tree_cls:app_commands.CommandTree,):
         self.__intents = intents
         self.__status = status
         self.__activity = activity
         self.__credentials = Nao_Credentials
         self.__persistent_views = False
-        super().__init__('!', intents = self.__intents, application_id = 928269449407102987)
+        super().__init__('!', intents = self.__intents, application_id = 928269449407102987, tree_cls=tree_cls)
         
     
 
@@ -112,18 +114,6 @@ class NaoBot(commands.Bot):
                 await cur.execute('DELETE FROM guilds WHERE id = :id', {'id':guild.id})
 
 
-    # async def on_command_error(self, ctx:commands.Context, error:Exception) -> None:   
-        
-    #     embed = discord.Embed()
-    #     embed.title = 'Error'
-    #     embed.color = discord.Color.red()
-    #     embed.set_footer(text='Nao Nation', icon_url=self.user.avatar.url)
-    #     embed.description = 'An error has occured while executing the command'
-
-    #     await ctx.send(embed=embed)
-    #     print('Ignoring {} in command {}:'.format(type(error), ctx.command), file=sys.stderr)
-    #     traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
-        ...
 
     # Everytime a command is invoked, this function is called
     async def on_command_completion(self, ctx:commands.Context) -> None:

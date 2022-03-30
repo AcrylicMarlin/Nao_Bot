@@ -4,7 +4,7 @@ from discord.ext import commands
 from typing import Optional
 
 
-from bot_class import NaoBot
+from bot_classes import NaoBot
 from utils import IsDmChannel
 from utils import check_if_dm
 

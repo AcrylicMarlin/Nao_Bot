@@ -1,5 +1,9 @@
+from code import interact
 import json
+from json import JSONDecodeError
 import os
+import sys
+import traceback
 
 import aiohttp
 import discord
@@ -8,15 +12,12 @@ from discord.ext import commands
 
 from bot_class import NaoBot
 from utils import Nao_Credentials
-from utils.errors import NotDmChannel
+from utils import check_if_not_dm
 
-def check_if_dm():
-    def predicate(ctx:commands.Context):
-        if ctx.guild is not None:
-            raise NotDmChannel()
-        else:
-            return True
-    return commands.check(predicate)
+
+
+
+
 
 class CDNCog(commands.Cog):
     def __init__(self, client):
@@ -33,43 +34,39 @@ class CDNCog(commands.Cog):
                 resp = json.dumps(json.loads(resp), indent=4)
                 print(resp)
 
-    @commands.group(name='cdn', invoke_without_command=True)
-    @check_if_dm()
-    async def cdn(self, ctx:commands.Context):
+    @app_commands.command(name='cdn-status')
+    @check_if_not_dm()
+    async def cdn(self, interaction:discord.Interaction):
+        if interaction.user.id not in Nao_Credentials.OWNERS.value:
+            return await interaction.channel.send('You do not have permission to use this command')
+
+
         embed = discord.Embed()
         embed.title = 'CDN'
-        embed.description = 'This command requires authorization.\nPlease enter your password below.\nIf you do not have a password, you are not authorized XD.'
-        await ctx.send(embed = embed)
-        msg:discord.Message = await self.client.wait_for('message', check=lambda message: message.author == ctx.author, timeout=60)
+        embed.set_footer(text=f'{interaction.user.display_name}', icon_url=f'{interaction.user.avatar.url}')
+        embed.color = discord.Color.random()
+        
         async with aiohttp.ClientSession('https://cdn.naonation.com', timeout=aiohttp.ClientTimeout(total = 15)) as session:
             headers = {
                 'User-Agent': f'{self.client.user.name}_{self.client.user.id}',
                 'upload_token': f'{Nao_Credentials.CDN.value}'
             }
-            async with session.get('/authorize', headers = headers, data = {'password': f'{msg.content}'}) as response:
+            async with session.get('/status', headers = headers) as response:
                 resp = await response.read()
                 resp = json.dumps(json.loads(resp), indent=4)
                 embed.description = f'```{resp}```'
-                await ctx.send(embed = embed)
-        # async with aiohttp.ClientSession('https://cdn.naonation.com', timeout=aiohttp.ClientTimeout(total = 15)) as session:
-        #     headers = {
-        #         'User-Agent': f'{self.client.user.name}_{self.client.user.id}',
-        #         'upload_token': f'{Nao_Credentials.CDN.value}'
-        #     }
-        #     async with session.get('/status', headers = headers) as response:
-        #         resp = await response.read()
-        #         resp = json.dumps(json.loads(resp), indent=4)
-        #         embed.description = f"""```{resp}```"""
-        
-        embed.set_footer(text=f'{ctx.author}', icon_url=f'{ctx.author.avatar.url}')
-        embed.color = discord.Color.random()
-        await ctx.send(embed=embed)
+                await interaction.channel.send(embed = embed)
 
-    @cdn.command(name='-upload')
-    @commands.has_any_role()
-    async def cdn_upload(self, ctx:commands.Context):
+
+
+
+    @app_commands.command(name='-upload')
+    @check_if_not_dm()
+    async def cdn_upload(self, interaction:discord.Interaction, *, file:discord.Attachment):
+        if interaction.user.id not in Nao_Credentials.OWNERS.value:
+            return await interaction.channel.send('You do not have permission to use this command')
+
         
-        file:Attachment = ctx.message.attachments[0]
         await file.save(f'{file.filename}')
         async with aiohttp.ClientSession('https://cdn.naonation.com', timeout=aiohttp.ClientTimeout(total = 15)) as session:
             headers = {
@@ -79,7 +76,7 @@ class CDNCog(commands.Cog):
             async with session.post('/upload', headers = headers, data = {'file': open(f'{file.filename}', 'rb')}) as response:
                 resp = await response.read()
                 resp = json.dumps(json.loads(resp), indent=4)
-                await ctx.send(f'```{resp}```')
+                await interaction.response.send_message(f'```{resp}```')
         
         if os.path.exists(f'{file.filename}'):
             os.remove(f'{file.filename}')
@@ -87,4 +84,4 @@ class CDNCog(commands.Cog):
 
 
 async def setup(client:NaoBot):
-    await client.add_cog(CDNCog(client), guild=Nao_Credentials.NAO_NATION.value)
+    await client.add_cog(CDNCog(client))

@@ -6,6 +6,7 @@ import traceback
 
 
 from discord.ext import commands
+from discord import app_commands
 import discord
 import asqlite
 
@@ -111,27 +112,24 @@ class NaoBot(commands.Bot):
                 await cur.execute('DELETE FROM guilds WHERE id = :id', {'id':guild.id})
 
 
-    async def on_command_error(self, ctx:commands.Context, error: commands.errors.CommandError) -> None:   
-        embed = discord.Embed()
-        embed.title = 'Error'
-        embed.color = discord.Color.red()
-        embed.set_footer(text='Nao Nation', icon_url=self.user.avatar.url)
-        if isinstance(error, commands.errors.CheckFailure):
-            if isinstance(error, NotDmChannel):
-                embed.description = 'This command can only be used in a DM channel.'
-                return await ctx.send(embed=embed)
+    # async def on_command_error(self, ctx:commands.Context, error:Exception) -> None:   
         
-        if isinstance(error, commands.errors.CommandInvokeError):
-            error=error.original
-            if isinstance(error, JSONDecodeError):
-                embed.description = 'Something went wrong while parsing the JSON response from the API.\nPlease try again later.'
-                return await ctx.send(embed=embed)
-        print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
-        traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+    #     embed = discord.Embed()
+    #     embed.title = 'Error'
+    #     embed.color = discord.Color.red()
+    #     embed.set_footer(text='Nao Nation', icon_url=self.user.avatar.url)
+    #     embed.description = 'An error has occured while executing the command'
+
+    #     await ctx.send(embed=embed)
+    #     print('Ignoring {} in command {}:'.format(type(error), ctx.command), file=sys.stderr)
+    #     traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
         ...
 
     # Everytime a command is invoked, this function is called
     async def on_command_completion(self, ctx:commands.Context) -> None:
         logging.info(f'{ctx.author.name} used command {ctx.command}')
+    
+
+    
     
     

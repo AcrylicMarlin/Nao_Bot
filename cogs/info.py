@@ -2,7 +2,11 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from typing import Optional
+
+
 from bot_class import NaoBot
+from utils import IsDmChannel
+from utils import check_if_dm
 
 
 class Info(commands.Cog):
@@ -10,7 +14,9 @@ class Info(commands.Cog):
         self.client:commands.Bot= client
 
     @app_commands.command(name = 'bot', description='Information on the bot')
+    @check_if_dm()
     async def bot(self, interaction:discord.Interaction):
+        
         embed = discord.Embed()
         embed.title = "Nao_Bot Information"
         member_count = 0
@@ -27,6 +33,7 @@ Number of members - {member_count}
         ...
     @app_commands.command(name = 'member', description='Information on a member')
     @app_commands.describe(member = "Member to get info of. Defaults to yourself")
+    @check_if_dm()
     async def member(self, interaction:discord.Interaction, member:Optional[discord.Member]):
         if not member:
             member = interaction.user
@@ -51,6 +58,7 @@ Roles: {role_string [:-2]}
         ...
     
     @app_commands.command(name='server', description='Gets info on the server')
+    @check_if_dm()
     async def server(self, interaction:discord.Interaction):
 
         embed = discord.Embed()

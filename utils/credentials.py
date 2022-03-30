@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Any, Dict
+from typing import Any, Dict, List
 import os
 
 import discord
@@ -31,3 +31,4 @@ class Nao_Credentials(Enum):
     NAO_NATION:discord.Object = NAO_NATION
     DATABASE:str = 'Nao_Data.db'
     CDN:str = CDNTOKEN
+    OWNERS:List[int] = [605830889217327259, 432613614168571904]

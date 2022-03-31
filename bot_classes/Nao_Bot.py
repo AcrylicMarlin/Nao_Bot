@@ -1,4 +1,5 @@
 import asyncio
+import os
 from typing import Dict, Any
 from pathlib import Path
 import sys
@@ -75,8 +76,9 @@ class NaoBot(commands.Bot):
         self.connect_db = asqlite.connect
         tables = [
             'CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)',
-            'CREATE TABLE IF NOT EXISTS guilds (id TEXT, name TEXT, count INT)',
-            'CREATE TABLE IF NOT EXISTS warns (id TEXT, guild_id TEXT, user_id TEXT, moderator_id TEXT, reason TEXT, time INT)'
+            'CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)',
+            'CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)',
+            'CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)'
         ]
         
         async with self.connect_db(self.credentials.DATABASE.value) as con:
@@ -87,15 +89,13 @@ class NaoBot(commands.Bot):
 
 
         await self.setup_commands()
-        
-    
+
 
     async def run(self):
 
         try:
             await self.start(self.credentials.DISCORD.value)
         except KeyboardInterrupt:
-            await self.__pool.close()
             await self.close()
 
     
@@ -103,14 +103,28 @@ class NaoBot(commands.Bot):
     async def on_guild_join(self, guild:discord.Guild):
         async with self.connect_db(self.credentials.DATABASE.value) as con:
             async with con.cursor() as cur:
-                await cur.execute('INSERT INTO guilds VALUES (:id, :name, :count)', {'id':guild.id, 'name':guild.name, 'count': guild.member_count if guild.member_count else 1})
-                print('Joined {}'.format(guild.name))
+                querys = [
+                    ['INSERT INTO guilds (id, name, count) VALUES (:id, :name, :count)', {'id':guild.id, 'name':guild.name, 'count':0}],
+                    ['INSERT INTO settings (id, wlsys, moderation, information, urls, basic) VALUES (:id, :wlsys, :moderation, :information, :urls, :basic)', {'id':guild.id, 'wlsys':0, 'moderation':0, 'information':0, 'urls':0, 'basic':0}]
+                ]
+                for query in querys:
+                    logging.info(f'Using Query   {query[0]}')
+                    await cur.execute(query[0], query[1])
 
 
     async def on_guild_remove(self, guild:discord.Guild):
         async with self.connect_db(self.credentials.DATABASE.value) as con:
+            querys = [
+                ['DELETE FROM guilds WHERE id = :id', {'id':guild.id}],
+                ['DELETE FROM settings WHERE id = :id', {'id':guild.id}],
+                ['DELETE FROM warns WHERE guild_id = :id', {'id':guild.id}],
+                ['DELETE FROM pers_messages WHERE id = :id', {'id':guild.id}]
+            ]
             async with con.cursor() as cur:
-                await cur.execute('DELETE FROM guilds WHERE id = :id', {'id':guild.id})
+                for query in querys:
+                    logging.info(f'Using Query   {query[0]}')
+                    await cur.execute(query[0], query[1])
+
 
 
     async def on_command_error(self, ctx: commands.Context, error: commands.errors.CommandError, /) -> None:

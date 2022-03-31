@@ -1,6 +1,7 @@
 import logging
 import traceback
 import sys
+import asyncio
 
 import discord
 from discord import app_commands
@@ -15,6 +16,10 @@ class NaoTree(app_commands.CommandTree):
         embed.title = 'Error'
         embed.color = discord.Color.red()
         embed.set_footer(text='Nao Nation', icon_url=self.client.user.avatar.url)
+        if isinstance(error, asyncio.exceptions.TimeoutError):
+            embed.description = '```The CDN failed to respond in time.\nPlease try again later.```'
+            await interaction.channel.send(embed=embed)
+            return
         embed.description = f'An error has occured while executing the command\nError:```{error}```'
         await interaction.channel.send(embed = embed)
         

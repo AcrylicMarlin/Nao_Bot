@@ -2815,3 +2815,144 @@ client_session: <aiohttp.client.ClientSession object at 0x000001AF6A57D630>
 2022-03-31 12:03:13,291 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
 2022-03-31 12:03:13,452 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-kmc9",{"micros":107311,"calls":["discord-sessions-blue-prd-2-87",{"micros":105743,"calls":["start_session",{"micros":80946,"calls":["discord-api-6b7b7c8b5b-jdfrz",{"micros":72396,"calls":["get_user",{"micros":19223},"add_authorized_ip",{"micros":1489},"get_guilds",{"micros":5359},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":9387,"calls":[]}]}]}] (Session ID: 7419c97833ee68c17abdb4cb4eb52160).
 2022-03-31 12:03:33,380 - root - on_command_completion - INFO - Marlin used command cdn -upload
+2022-03-31 16:09:26,750 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:09:26,752 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:09:26,984 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:09:26,985 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:09:26,986 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:09:26,987 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT
+2022-03-31 16:09:27,046 - asyncio - default_exception_handler - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000209632F8CA0>, 543337.265)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000209632C9E40>
+2022-03-31 16:09:27,047 - asyncio - default_exception_handler - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x00000209632CB1F0>
+transport: <_ProactorSocketTransport fd=772 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Python310\lib\asyncio\sslproto.py", line 684, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 361, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 397, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2022-03-31 16:10:14,858 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:10:14,860 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:10:15,049 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:10:15,049 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:10:15,050 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:10:15,050 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:10:15,197 - asyncio - default_exception_handler - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001F484558C40>, 543385.343)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001F48452BA60>
+2022-03-31 16:10:15,198 - asyncio - default_exception_handler - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001F48452B2B0>
+transport: <_ProactorSocketTransport fd=696 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Python310\lib\asyncio\sslproto.py", line 684, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 361, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 397, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2022-03-31 16:11:46,392 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:11:46,394 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:11:46,583 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:11:46,584 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:11:46,584 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:11:46,585 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:11:46,742 - asyncio - default_exception_handler - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001C4F474CBE0>, 543476.859)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001C4F475D480>
+2022-03-31 16:11:46,744 - asyncio - default_exception_handler - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001C4F475DC30>
+transport: <_ProactorSocketTransport fd=324 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Python310\lib\asyncio\sslproto.py", line 684, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 361, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Python310\lib\asyncio\proactor_events.py", line 397, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2022-03-31 16:12:58,473 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:12:58,475 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:12:58,806 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:12:58,808 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:12:58,810 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:12:58,811 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:13:00,400 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:13:00,515 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-sz15",{"micros":65739,"calls":["discord-sessions-blue-prd-2-53",{"micros":64443,"calls":["start_session",{"micros":48572,"calls":["discord-api-69899bf849-kwz9h",{"micros":44122,"calls":["get_user",{"micros":7382},"add_authorized_ip",{"micros":2918},"get_guilds",{"micros":4500},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 4639c7b9605e4512aa215d69e0433864).
+2022-03-31 16:14:03,247 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:14:03,248 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:14:03,539 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:14:03,540 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:14:03,541 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:14:03,542 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:14:05,433 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:14:05,553 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ds1p",{"micros":58093,"calls":["discord-sessions-blue-prd-2-79",{"micros":56603,"calls":["start_session",{"micros":41590,"calls":["discord-api-69899bf849-hdndf",{"micros":36893,"calls":["get_user",{"micros":6065},"add_authorized_ip",{"micros":3476},"get_guilds",{"micros":3584},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":2,"calls":[]}]}]}] (Session ID: 9f3dc219515fbb390687a2b358552d35).
+2022-03-31 16:14:19,088 - root - on_error - ERROR - Ignoring <class 'discord.app_commands.errors.CommandInvokeError'> in command setup: Command 'setup' raised an exception: AttributeError: 'Interaction' object has no attribute 'send'
+2022-03-31 16:14:35,096 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:14:35,099 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:14:35,449 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:14:35,451 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:14:35,452 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:14:35,454 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:14:36,743 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:14:36,834 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-f4qp",{"micros":52875,"calls":["discord-sessions-blue-prd-2-46",{"micros":50865,"calls":["start_session",{"micros":42483,"calls":["discord-api-69899bf849-489t2",{"micros":38819,"calls":["get_user",{"micros":7255},"add_authorized_ip",{"micros":3371},"get_guilds",{"micros":3756},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":5506,"calls":[]}]}]}] (Session ID: 6e1db84e194e1e036fe9cc6168aea4cd).
+2022-03-31 16:14:43,792 - root - on_error - ERROR - Ignoring <class 'discord.app_commands.errors.CommandInvokeError'> in command setup: Command 'setup' raised an exception: AttributeError: 'Setup' object has no attribute 'connect_db'
+2022-03-31 16:15:02,382 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:15:02,385 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:15:02,651 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:15:02,653 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:15:02,654 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:15:02,655 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:15:03,577 - discord.http - request - WARNING - We are being rate limited. Retrying in 1.59 seconds. Handled under the bucket "None:695025143264706622:/applications/{application_id}/guilds/{guild_id}/commands"
+2022-03-31 16:15:05,491 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:15:05,640 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-smx5",{"micros":74762,"calls":["discord-sessions-blue-prd-2-86",{"micros":73247,"calls":["start_session",{"micros":60601,"calls":["discord-api-69899bf849-w6q49",{"micros":57206,"calls":["get_user",{"micros":14475},"add_authorized_ip",{"micros":5578},"get_guilds",{"micros":5598},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 53f4bd74f621ade9d3497ef4dbca5709).
+2022-03-31 16:15:12,250 - root - on_error - ERROR - Ignoring <class 'discord.app_commands.errors.CommandInvokeError'> in command setup: Command 'setup' raised an exception: TypeError: expected Item not <class 'discord.components.TextInput'>
+2022-03-31 16:18:15,274 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:18:15,275 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:18:15,543 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:18:15,545 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:18:15,546 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:18:15,548 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:18:16,609 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:18:16,765 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-8cd4",{"micros":115013,"calls":["discord-sessions-blue-prd-2-99",{"micros":113366,"calls":["start_session",{"micros":88371,"calls":["discord-api-69899bf849-vfklr",{"micros":84499,"calls":["get_user",{"micros":21129},"add_authorized_ip",{"micros":2310},"get_guilds",{"micros":7083},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":9280,"calls":[]}]}]}] (Session ID: 71774f6f9639dbf65b2a84730da18c00).
+2022-03-31 16:18:23,233 - root - on_error - ERROR - Ignoring <class 'discord.app_commands.errors.CommandInvokeError'> in command setup: Command 'setup' raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In data.components: This field is required
+2022-03-31 16:21:39,487 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:21:39,489 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:21:39,679 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:21:39,680 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:21:39,682 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:21:39,682 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:21:40,790 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:21:40,891 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-nhw7",{"micros":60490,"calls":["discord-sessions-blue-prd-2-15",{"micros":59261,"calls":["start_session",{"micros":36688,"calls":["discord-api-69899bf849-kwz9h",{"micros":33834,"calls":["get_user",{"micros":5488},"add_authorized_ip",{"micros":1923},"get_guilds",{"micros":5827},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":5662,"calls":[]}]}]}] (Session ID: a499ad5ae370b85d1c700103635257c2).
+2022-03-31 16:21:48,630 - root - on_error - ERROR - Ignoring <class 'discord.app_commands.errors.CommandInvokeError'> in command setup: Command 'setup' raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In data.components: This field is required
+2022-03-31 16:22:55,086 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:22:55,088 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:22:55,291 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:22:55,293 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:22:55,295 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:22:55,297 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:22:56,700 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:22:56,818 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-rswq",{"micros":52499,"calls":["discord-sessions-blue-prd-2-41",{"micros":51335,"calls":["start_session",{"micros":41548,"calls":["discord-api-69899bf849-4mq68",{"micros":37212,"calls":["get_user",{"micros":6502},"add_authorized_ip",{"micros":4908},"get_guilds",{"micros":4636},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":2277,"calls":[]}]}]}] (Session ID: 5e776f0ee885b0c6cc9d1dca7eb8adc2).
+2022-03-31 16:23:23,313 - root - on_error - ERROR - Ignoring <class 'discord.app_commands.errors.CommandInvokeError'> in command setup: Command 'setup' raised an exception: AttributeError: 'SetupModal' object has no attribute 'result'
+2022-03-31 16:28:52,420 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:28:52,422 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:28:52,645 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:28:52,645 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:28:52,646 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:28:52,647 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:28:53,548 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:28:53,657 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-kjr2",{"micros":72304,"calls":["discord-sessions-blue-prd-2-38",{"micros":70753,"calls":["start_session",{"micros":43935,"calls":["discord-api-69899bf849-pjgwz",{"micros":39516,"calls":["get_user",{"micros":8729},"add_authorized_ip",{"micros":2499},"get_guilds",{"micros":4035},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":3447,"calls":[]}]}]}] (Session ID: 52d26455b66dd937d8ec43f085ef7004).
+2022-03-31 16:30:02,571 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-03-31 16:30:02,572 - discord.client - login - INFO - logging in using static token
+2022-03-31 16:30:02,789 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)
+2022-03-31 16:30:02,790 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)
+2022-03-31 16:30:02,791 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)
+2022-03-31 16:30:02,792 - root - setup_hook - INFO - Using Query   CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)
+2022-03-31 16:30:05,611 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-03-31 16:30:05,749 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-x1fs",{"micros":108409,"calls":["discord-sessions-blue-prd-2-141",{"micros":107241,"calls":["start_session",{"micros":91913,"calls":["discord-api-69899bf849-rdhjn",{"micros":74416,"calls":["get_user",{"micros":13755},"add_authorized_ip",{"micros":2796},"get_guilds",{"micros":7058},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":11702,"calls":[]}]}]}] (Session ID: 119b9edef5508ac0c885efe49f282a29).

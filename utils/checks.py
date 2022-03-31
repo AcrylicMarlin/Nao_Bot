@@ -12,6 +12,7 @@ from utils import (
 
 
 def check_if_dm():
+    """ Raises IsDMChannel if the interaction is in a DM channel. """
     def check(interaction:discord.Interaction):
         if interaction.guild is None:
             raise IsDmChannel()
@@ -19,6 +20,7 @@ def check_if_dm():
     return app_commands.check(check)
 
 def check_if_not_dm():
+    """ Raises NotDmChannel if the interaction is not in a DM channel. """
     def check(ctx:commands.Context):
         if ctx.guild is not None:
             raise NotDmChannel()

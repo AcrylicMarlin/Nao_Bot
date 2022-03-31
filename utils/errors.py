@@ -12,10 +12,14 @@ class CogLoadFailure(NaoError):
 class NaoAppError(app_commands.AppCommandError):
     def __init__(self, message:str):
         super().__init__(message)
-class NotDmChannel(app_commands.AppCommandError):
+class NotDmChannel(NaoError):
     def __init__(self):
         super().__init__("This command can only be used in a DM channel.")
 
-class IsDmChannel(app_commands.AppCommandError):
+class IsDmChannel(NaoAppError):
     def __init__(self):
         super().__init__("This command cannot be used in a DM channel.")
+
+class NotAuthorized(NaoError):
+    def __init__(self):
+        super().__init__("You are not authorized to use this command.")

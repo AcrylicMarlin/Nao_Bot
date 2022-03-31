@@ -3,6 +3,7 @@ from .errors import (
     CogLoadFailure,
     NotDmChannel,
     IsDmChannel,
+    NotAuthorized,
 )
 from .checks import (
     check_if_dm,

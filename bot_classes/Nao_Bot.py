@@ -1,3 +1,4 @@
+import asyncio
 from json import JSONDecodeError
 from typing import Dict, Any
 from pathlib import Path
@@ -114,12 +115,41 @@ class NaoBot(commands.Bot):
                 await cur.execute('DELETE FROM guilds WHERE id = :id', {'id':guild.id})
 
 
+    async def on_command_error(self, ctx: commands.Context, error: commands.errors.CommandError, /) -> None:
+        embed = discord.Embed()
+        embed.title = 'Error'
+        embed.color = discord.Color.red()
+        embed.set_footer(text='Nao Nation', icon_url=self.user.avatar.url)
+        if isinstance(error, commands.errors.CommandInvokeError):
+            error = error.original
+        
+        if isinstance(error, asyncio.exceptions.TimeoutError):
+            embed.description = '```The CDN failed to respond in time.\nPlease try again later.```'
+            await ctx.send(embed=embed)
+            return
+        embed.description = f'An error has occured while executing the command\nError:```{error}```'
+        await ctx.send(embed = embed)
+
+        print('Ignoring {} in command {}:'.format(type(error), ctx.command.name), file=sys.stderr)
+        traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+        logging.error(f'Ignoring {type(error)} in command {ctx.command.name}: {error}')
 
     # Everytime a command is invoked, this function is called
     async def on_command_completion(self, ctx:commands.Context) -> None:
         logging.info(f'{ctx.author.name} used command {ctx.command}')
-    
 
-    
-    
-    
+    async def on_error(self, event_method: str, /, *args: Any, **kwargs: Any) -> None:
+        error_type, error, error_traceback = sys.exc_info()
+
+        if event_method == 'on_message':
+            message = args[0]
+            embed = discord.Embed()
+            embed.title = 'Error'
+            embed.color = discord.Color.red()
+            embed.set_footer(text='Nao Nation', icon_url=self.user.avatar.url)
+            embed.description = f'An error has occured while executing the command\nError:```{str(error)}```'
+
+            await message.channel.send(embed = embed)
+            print('Ignoring {} in {}:'.format(error_type, event_method), file=sys.stderr)
+            traceback.print_exception(error_type, error, error_traceback, file=sys.stderr)
+            logging.error(f'Ignoring {type(error)} in {event_method}: \n{error}')

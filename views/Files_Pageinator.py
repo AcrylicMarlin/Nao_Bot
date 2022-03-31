@@ -18,7 +18,7 @@ from discord.ui import (
 from typing import List, Any
 
 
-class FilesPaginator(View):
+class FilesPageinator(View):
     current_page: int = 0
     page_limit: int
     pages: List[str]

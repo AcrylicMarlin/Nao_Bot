@@ -1,9 +1,5 @@
-from code import interact
 import json
-from json import JSONDecodeError
 import os
-import sys
-import traceback
 
 import aiohttp
 import discord
@@ -11,9 +7,8 @@ from discord import Attachment, app_commands
 from discord.ext import commands
 
 from bot_classes import NaoBot
-from utils import Nao_Credentials
-from utils import check_if_not_dm
-from views.Files_Pageinator import FilesPaginator
+from utils import Nao_Credentials, check_if_not_dm
+from views import FilesPageinator
 
 
 
@@ -125,7 +120,7 @@ class CDNCog(commands.Cog):
             async with session.get('/file-list', headers = headers) as response:
                 resp = await response.read()
                 resp = json.loads(resp)
-        view = FilesPaginator(resp['file_list'])
+        view = FilesPageinator(resp['file_list'])
         view.message = await ctx.send(view = view)
             
         

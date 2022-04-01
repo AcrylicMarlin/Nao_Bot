@@ -3,6 +3,8 @@ import asyncio
 import logging
 import sys
 import traceback
+import aiohttp
+import asqlite
 
 # External Libraries
 import discord
@@ -13,6 +15,7 @@ from discord.ext import commands
 # Internal Functionality
 from bot_classes import NaoBot, NaoTree
 from utils import NotDmChannel, CogLoadFailure
+from utils.credentials import Nao_Credentials
 from utils.errors import IsDmChannel
 
 

@@ -24,7 +24,7 @@ class FilesPageinator(View):
     pages: List[str]
     embed:Embed
     extra_message:Message
-    def __init__(self, pages:List[str]):
+    def __init__(self, pages:List[str], session:aiohttp.ClientSession):
         self.page_limit = len(pages)
         self.pages = pages
         super().__init__(timeout=30)
@@ -32,6 +32,7 @@ class FilesPageinator(View):
         self.embed.title = 'Files'
         self.embed.set_footer(text='Page {}/{}'.format(self.current_page+1, self.page_limit))
         self.extra_message = None
+        self.session = session
         ...
 
 
@@ -176,18 +177,17 @@ class FilesPageinator(View):
                 self.embed.set_image(url='')
                 self.embed.description = self.pages[self.current_page] + " is not currently supported LOL"
                 return None
-            async with aiohttp.ClientSession('https://cdn.nao.gg/') as session:
-                async with session.get("/" + self.pages[self.current_page]) as response:
-                    respBytes = await response.read()
 
-                    file = open(f'{self.pages[self.current_page]}', 'wb')
-                    file = file.write(respBytes)
-                    file = File(f'{self.pages[self.current_page]}', filename = self.pages[self.current_page])
-                    self.embed.set_image(url='')
-                    self.embed.description = self.pages[self.current_page]
-                    self.embed.set_image(url='')
-                    return file
-                ...
+            async with self.session.get("/" + self.pages[self.current_page]) as response:
+                respBytes = await response.read()
+                file = open(f'{self.pages[self.current_page]}', 'wb')
+                file = file.write(respBytes)
+                file = File(f'{self.pages[self.current_page]}', filename = self.pages[self.current_page])
+                self.embed.set_image(url='')
+                self.embed.description = self.pages[self.current_page]
+                self.embed.set_image(url='')
+                return file
+            ...
         else:
             self.embed.description = f'```{self.pages[self.current_page]}```'
             self.embed.set_image(url=f'https://cdn.nao.gg/{self.pages[self.current_page]}')

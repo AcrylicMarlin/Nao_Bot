@@ -4,6 +4,7 @@ from typing import Dict, Any
 from pathlib import Path
 import sys
 import traceback
+import aiohttp
 
 
 from discord.ext import commands
@@ -87,14 +88,18 @@ class NaoBot(commands.Bot):
                     logging.info(f'Using Query   {table}')
                     await cur.execute(table)
 
-
+        print(self.connection, self.session)
         await self.setup_commands()
 
 
     async def run(self):
-
         try:
-            await self.start(self.credentials.DISCORD.value)
+            async with self:
+                async with aiohttp.ClientSession('https://cdn.nao.gg/', timeout = aiohttp.ClientTimeout(15)) as session:
+                    self.session = session
+                    async with asqlite.connect(self.credentials.DATABASE.value) as connection:
+                        self.connection = connection
+                        await self.start(self.credentials.DISCORD.value)
         except KeyboardInterrupt:
             await self.close()
 

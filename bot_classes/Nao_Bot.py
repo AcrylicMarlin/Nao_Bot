@@ -14,7 +14,7 @@ from discord import app_commands
 import discord
 import asqlite
 
-from utils import Nao_Credentials, CogLoadFailure, NotDmChannel
+from utils import Nao_Credentials, CogLoadFailure 
 
 log_format = (
         '%(asctime)s - '
@@ -84,7 +84,7 @@ class NaoBot(commands.Bot):
                 id INTEGER PRIMARY KEY,
                 name TEXT NOT NULL,
                 count INTEGER NOT NULL,
-                settings TEXT, NOT NULL,
+                settings TEXT NOT NULL,
                 pers_messages TEXT NOT NULL UNIQUE
             );
             """,
@@ -107,6 +107,7 @@ class NaoBot(commands.Bot):
             )
             """
         ]
+        
         # tables = [
         #     'CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)',
         #     'CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT, config_status TEXT)',

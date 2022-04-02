@@ -3,7 +3,7 @@ import os
 
 import aiohttp
 import discord
-from discord import Attachment, app_commands
+from discord import Attachment
 from discord.ext import commands
 
 from bot_classes import NaoBot

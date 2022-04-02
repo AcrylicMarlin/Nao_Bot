@@ -1,2 +1,4 @@
 .env
 test.py
+Nao_Data.db-shm
+Nao_data.db-wal

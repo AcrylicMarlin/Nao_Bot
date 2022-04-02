@@ -1,4 +1,6 @@
 import asyncio
+from datetime import datetime
+import json
 import os
 from typing import Dict, Any
 from pathlib import Path
@@ -74,21 +76,50 @@ class NaoBot(commands.Bot):
     async def setup_hook(self):
         self.activity = self.__activity
         self.status = self.__status
-        self.connect_db = asqlite.connect
-        tables = [
-            'CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)',
-            'CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT)',
-            'CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)',
-            'CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)'
-        ]
-        
-        async with self.connect_db(self.credentials.DATABASE.value) as con:
-            async with con.cursor() as cur:
-                for table in tables:
-                    logging.info(f'Using Query   {table}')
-                    await cur.execute(table)
 
-        print(self.connection, self.session)
+        
+        tables = [
+            """
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                settings TEXT, NOT NULL,
+                pers_messages TEXT NOT NULL UNIQUE
+            );
+            """,
+            """
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            """,
+            """
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL,
+            )
+            """
+        ]
+        # tables = [
+        #     'CREATE TABLE IF NOT EXISTS pers_messages (id TEXT PRIMARY KEY, persistent_message TEXT)',
+        #     'CREATE TABLE IF NOT EXISTS guilds (id TEXT PRIMARY KEY, name TEXT, count INT, config_status TEXT)',
+        #     'CREATE TABLE IF NOT EXISTS warns (id TEXT PRIMARY KEY, guild_id TEXT UNIQUE, user_id TEXT UNIQUE, moderator_id TEXT, reason TEXT, time INT)',
+        #     'CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY, wlsys BIT, moderation BIT, information BIT, urls BIT, basic BIT)'
+        # ]
+        
+        async with self.connection.cursor() as cur:
+            for table in tables:
+                logging.info(f'Using Query   {table}')
+                await cur.execute(table)
+
+
         await self.setup_commands()
 
 
@@ -106,15 +137,33 @@ class NaoBot(commands.Bot):
     
 
     async def on_guild_join(self, guild:discord.Guild):
-        async with self.connect_db(self.credentials.DATABASE.value) as con:
-            async with con.cursor() as cur:
+        config = {
+            'wlsys':False,
+            'moderation':False
+        }
+        async with self.connection.cursor() as cur:
                 querys = [
-                    ['INSERT INTO guilds (id, name, count) VALUES (:id, :name, :count)', {'id':guild.id, 'name':guild.name, 'count':0}],
-                    ['INSERT INTO settings (id, wlsys, moderation, information, urls, basic) VALUES (:id, :wlsys, :moderation, :information, :urls, :basic)', {'id':guild.id, 'wlsys':0, 'moderation':0, 'information':0, 'urls':0, 'basic':0}]
+                    ['INSERT INTO guilds (id, name, count) VALUES (:id, :name, :count, :config_status)', {'id':guild.id, 'name':guild.name, 'count':0, 'config_status':json.dumps(config)}]
                 ]
                 for query in querys:
                     logging.info(f'Using Query   {query[0]}')
                     await cur.execute(query[0], query[1])
+        embed = discord.Embed()
+        embed.title = 'Thanks for adding me to your server!'
+        embed.description = """
+        We greatly appreciate you adding us to your server family.
+        
+        Currently I have very limited functionality, but that can be fixed by running `/config` in the server.
+        """
+        time = datetime.now()
+        time_str = time.time().strftime('%H:%M:%S %p')
+        embed.set_footer(text = guild.owner.display_name + time_str, icon_url = guild.owner.avatar.url)
+        try:
+            await guild.owner.send(embed = embed)
+        except:
+            pass
+
+            
 
 
     async def on_guild_remove(self, guild:discord.Guild):

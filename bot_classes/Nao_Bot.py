@@ -14,6 +14,7 @@ from discord import app_commands
 import discord
 import asqlite
 
+from .Nao_Embeds import ErrorEmbed, SpecialEmbed
 from utils import Nao_Credentials, CogLoadFailure 
 
 log_format = (
@@ -84,8 +85,9 @@ class NaoBot(commands.Bot):
                 id INTEGER PRIMARY KEY,
                 name TEXT NOT NULL,
                 count INTEGER NOT NULL,
-                settings TEXT NOT NULL,
-                pers_messages TEXT NOT NULL UNIQUE
+                config TEXT,
+                pers_messages TEXT UNIQUE,
+                config_data TEXT
             );
             """,
             """
@@ -103,8 +105,8 @@ class NaoBot(commands.Bot):
             CREATE TABLE IF NOT EXISTS urls (
                 user_id TEXT NOT NULL,
                 url TEXT NOT NULL,
-                time TEXT NOT NULL,
-            )
+                time TEXT NOT NULL
+            );
             """
         ]
         
@@ -117,9 +119,9 @@ class NaoBot(commands.Bot):
         
         async with self.connection.cursor() as cur:
             for table in tables:
+
                 logging.info(f'Using Query   {table}')
                 await cur.execute(table)
-
 
         await self.setup_commands()
 
@@ -138,27 +140,21 @@ class NaoBot(commands.Bot):
     
 
     async def on_guild_join(self, guild:discord.Guild):
-        config = {
-            'wlsys':False,
-            'moderation':False
-        }
         async with self.connection.cursor() as cur:
                 querys = [
-                    ['INSERT INTO guilds (id, name, count) VALUES (:id, :name, :count, :config_status)', {'id':guild.id, 'name':guild.name, 'count':0, 'config_status':json.dumps(config)}]
+                    ['INSERT INTO guilds (id, name, count, config, pers_messages) VALUES (:id, :name, :count, null, null, null)', {'id':guild.id, 'name':guild.name, 'count':guild.member_count}]
                 ]
                 for query in querys:
                     logging.info(f'Using Query   {query[0]}')
                     await cur.execute(query[0], query[1])
-        embed = discord.Embed()
+        embed = SpecialEmbed()
         embed.title = 'Thanks for adding me to your server!'
         embed.description = """
         We greatly appreciate you adding us to your server family.
         
         Currently I have very limited functionality, but that can be fixed by running `/config` in the server.
         """
-        time = datetime.now()
-        time_str = time.time().strftime('%H:%M:%S %p')
-        embed.set_footer(text = guild.owner.display_name + time_str, icon_url = guild.owner.avatar.url)
+        
         try:
             await guild.owner.send(embed = embed)
         except:
@@ -168,12 +164,11 @@ class NaoBot(commands.Bot):
 
 
     async def on_guild_remove(self, guild:discord.Guild):
+        
         async with self.connect_db(self.credentials.DATABASE.value) as con:
+            
             querys = [
-                ['DELETE FROM guilds WHERE id = :id', {'id':guild.id}],
-                ['DELETE FROM settings WHERE id = :id', {'id':guild.id}],
-                ['DELETE FROM warns WHERE guild_id = :id', {'id':guild.id}],
-                ['DELETE FROM pers_messages WHERE id = :id', {'id':guild.id}]
+                ['DELETE FROM guilds WHERE id = :id', {'id':guild.id}]
             ]
             async with con.cursor() as cur:
                 for query in querys:
@@ -197,26 +192,36 @@ class NaoBot(commands.Bot):
         embed.description = f'An error has occured while executing the command\nError:```{error}```'
         await ctx.send(embed = embed)
 
-        print('Ignoring {} in command {}:'.format(type(error), ctx.command.name), file=sys.stderr)
-        traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+        print('Ignoring {} in command {}'.format(str(error), ctx.command.name), file=sys.stderr)
+        # traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
         logging.error(f'Ignoring {type(error)} in command {ctx.command.name}: {error}')
+
+
+
 
     # Everytime a command is invoked, this function is called
     async def on_command_completion(self, ctx:commands.Context) -> None:
         logging.info(f'{ctx.author.name} used command {ctx.command}')
+
+
+
+
+
 
     async def on_error(self, event_method: str, /, *args: Any, **kwargs: Any) -> None:
         error_type, error, error_traceback = sys.exc_info()
 
         if event_method == 'on_message':
             message = args[0]
-            embed = discord.Embed()
-            embed.title = 'Error'
-            embed.color = discord.Color.red()
-            embed.set_footer(text='Nao Nation', icon_url=self.user.avatar.url)
-            embed.description = f'An error has occured while executing the command\nError:```{str(error)}```'
+            assert isinstance(message, discord.Message), 'Argument `message` is not a discord.Message. This means it is most likely overriden in a cog.'
+            embed = ErrorEmbed(error)
+            if isinstance(error, asyncio.exceptions.TimeoutError):
+                embed.description = '```The CDN failed to respond in time.\nPlease try again later.```'
+                await message.channel.send(embed=embed)
+                return
+            
 
             await message.channel.send(embed = embed)
             print('Ignoring {} in {}:'.format(error_type, event_method), file=sys.stderr)
-            traceback.print_exception(error_type, error, error_traceback, file=sys.stderr)
+            # traceback.print_exception(error_type, error, error_traceback, file=sys.stderr)
             logging.error(f'Ignoring {type(error)} in {event_method}: \n{error}')

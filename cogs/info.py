@@ -7,6 +7,7 @@ from typing import Optional
 from bot_classes import NaoBot
 from utils import IsDmChannel
 from utils import check_if_dm
+from bot_classes import SpecialEmbed
 
 
 class Info(commands.Cog):
@@ -38,7 +39,7 @@ Number of members - {member_count}
         if not member:
             member = interaction.user
         
-        embed = discord.Embed()
+        embed = SpecialEmbed()
         embed.title = f"{member.display_name}'s information"
         role_string = ''
         for role in member.roles[1:]:

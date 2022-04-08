@@ -100,3 +100,2438 @@
                 pers_messages TEXT NOT NULL UNIQUE
             );
             
+2022-04-04 10:44:33,865 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-04 10:44:33,898 - discord.client - login - INFO - logging in using static token
+2022-04-04 10:44:34,176 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-04 10:44:34,182 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-04 10:44:34,186 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL,
+            )
+            
+2022-04-04 10:45:09,933 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-04 10:45:09,962 - discord.client - login - INFO - logging in using static token
+2022-04-04 10:45:10,170 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-04 10:45:10,171 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-04 10:45:10,172 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL,
+            );
+            
+2022-04-04 10:45:44,707 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-04 10:45:44,715 - discord.client - login - INFO - logging in using static token
+2022-04-04 10:45:44,918 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-04 10:45:44,918 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-04 10:45:44,919 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-04 10:45:45,639 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-04 10:45:45,829 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ss5t",{"micros":148492,"calls":["discord-sessions-blue-prd-2-137",{"micros":145327,"calls":["start_session",{"micros":120161,"calls":["discord-api-745994f666-zr4xp",{"micros":115058,"calls":["get_user",{"micros":19413},"add_authorized_ip",{"micros":6524},"get_guilds",{"micros":9707},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":8936,"calls":[]}]}]}] (Session ID: bd7ff95c151361f8e14fc2261734634e).
+2022-04-04 10:46:03,490 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-04 10:46:03,503 - discord.client - login - INFO - logging in using static token
+2022-04-04 10:46:03,704 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-04 10:46:03,714 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-04 10:46:03,716 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-04 10:46:04,311 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-04 10:46:04,424 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-76zt",{"micros":71711,"calls":["discord-sessions-blue-prd-2-96",{"micros":70126,"calls":["start_session",{"micros":46504,"calls":["discord-api-745994f666-ltdxs",{"micros":42313,"calls":["get_user",{"micros":9209},"add_authorized_ip",{"micros":1935},"get_guilds",{"micros":5712},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":15302,"calls":[]}]}]}] (Session ID: 96a121c6a2672a05e9e278d05f4f9e26).
+2022-04-04 10:46:53,160 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-04 10:46:53,176 - discord.client - login - INFO - logging in using static token
+2022-04-04 10:46:53,351 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-04 10:46:53,353 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-04 10:46:53,353 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-04 10:46:53,794 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-04 10:46:53,932 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-xz25",{"micros":97322,"calls":["discord-sessions-blue-prd-2-146",{"micros":95469,"calls":["start_session",{"micros":64737,"calls":["discord-api-745994f666-tgghc",{"micros":58032,"calls":["get_user",{"micros":8432},"add_authorized_ip",{"micros":2918},"get_guilds",{"micros":8426},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":9058,"calls":[]}]}]}] (Session ID: b4800928ef7cfd630070bc313067c3ad).
+2022-04-04 11:16:37,469 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-04 11:16:37,476 - discord.client - login - INFO - logging in using static token
+2022-04-04 11:31:19,298 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-04 11:31:19,304 - discord.client - login - INFO - logging in using static token
+2022-04-04 11:31:19,519 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-04 11:31:19,520 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-04 11:31:19,520 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-04 11:31:19,805 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-04 11:31:19,930 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-kjr2",{"micros":73439,"calls":["discord-sessions-blue-prd-2-147",{"micros":72126,"calls":["start_session",{"micros":53973,"calls":["discord-api-745994f666-cbvhs",{"micros":49993,"calls":["get_user",{"micros":6996},"add_authorized_ip",{"micros":1242},"get_guilds",{"micros":17001},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":2,"calls":[]}]}]}] (Session ID: 34b54ab212fbe0e30c6d703146925d37).
+2022-04-05 14:46:02,978 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 14:46:03,007 - discord.client - login - INFO - logging in using static token
+2022-04-05 14:46:03,246 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 14:46:03,248 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 14:46:03,249 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 14:46:03,748 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 14:46:03,888 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-vtn3",{"micros":79050,"calls":["discord-sessions-blue-prd-2-43",{"micros":77371,"calls":["start_session",{"micros":61961,"calls":["discord-api-6bcdfc55d5-rz55v",{"micros":57642,"calls":["get_user",{"micros":5970},"add_authorized_ip",{"micros":3815},"get_guilds",{"micros":13871},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: a4aaf3f0a09cb703f45fdd3e6c00b15b).
+2022-04-05 14:54:37,567 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 14:54:37,575 - discord.client - login - INFO - logging in using static token
+2022-04-05 14:54:37,769 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 14:54:37,770 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 14:54:37,771 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 14:54:38,158 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 14:54:38,329 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-r449",{"micros":123565,"calls":["discord-sessions-blue-prd-2-3",{"micros":121596,"calls":["start_session",{"micros":105921,"calls":["discord-api-6bcdfc55d5-fnxlm",{"micros":99027,"calls":["get_user",{"micros":14741},"add_authorized_ip",{"micros":4500},"get_guilds",{"micros":18150},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":2,"calls":[]}]}]}] (Session ID: 5e7649a11df987f15630a7b8fb9a4d0b).
+2022-04-05 17:33:50,202 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:33:50,225 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:33:50,498 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:33:50,499 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:33:50,500 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:33:50,853 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 17:33:51,013 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-kv04",{"micros":114920,"calls":["discord-sessions-blue-prd-2-24",{"micros":113818,"calls":["start_session",{"micros":62281,"calls":["discord-api-75b55cfd46-hs5mx",{"micros":57838,"calls":["get_user",{"micros":9402},"add_authorized_ip",{"micros":5665},"get_guilds",{"micros":10504},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":28142,"calls":[]}]}]}] (Session ID: 1a19d5d3a273d7e82104a8c1045e220f).
+2022-04-05 17:36:58,110 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:36:58,117 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:36:58,298 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:36:58,298 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:36:58,299 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:37:38,452 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:37:38,458 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:37:39,053 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:37:39,054 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:37:39,055 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:37:46,390 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:37:46,395 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:37:46,651 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:37:46,653 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:37:46,654 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:37:53,340 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:37:53,346 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:37:53,528 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:37:53,529 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:37:53,530 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:38:06,986 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:38:06,993 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:38:07,185 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:38:07,186 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:38:07,186 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:38:25,434 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:38:25,440 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:38:25,644 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:38:25,645 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:38:25,646 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:38:40,684 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:38:40,690 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:38:40,844 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:38:40,845 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:38:40,846 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:40:35,474 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 17:40:35,480 - discord.client - login - INFO - logging in using static token
+2022-04-05 17:40:35,678 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 17:40:35,679 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 17:40:35,680 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 17:40:36,378 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 17:40:36,519 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-kjr2",{"micros":94606,"calls":["discord-sessions-blue-prd-2-18",{"micros":89089,"calls":["start_session",{"micros":59068,"calls":["discord-api-75b55cfd46-fbbmh",{"micros":53905,"calls":["get_user",{"micros":8057},"add_authorized_ip",{"micros":5906},"get_guilds",{"micros":7751},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":27337,"calls":[]}]}]}] (Session ID: a6fae13833ae9212dfbd8ce0adc94168).
+2022-04-05 17:41:03,158 - root - on_command_completion - INFO - Marlin used command cdn
+2022-04-05 17:41:12,495 - root - on_command_completion - INFO - Marlin used command cdn -file-list
+2022-04-05 17:41:23,153 - root - on_command_error - ERROR - Ignoring <class 'TypeError'> in command -files: FilesPageinator.__init__() missing 1 required positional argument: 'session'
+2022-04-05 19:08:13,093 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 19:08:13,100 - discord.client - login - INFO - logging in using static token
+2022-04-05 19:08:13,291 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 19:08:13,291 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 19:08:13,292 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 19:08:14,355 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 19:08:14,531 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-7p8c",{"micros":143430,"calls":["discord-sessions-blue-prd-2-146",{"micros":141924,"calls":["start_session",{"micros":102185,"calls":["discord-api-6cbc6fd76c-hvssf",{"micros":89676,"calls":["get_user",{"micros":12087},"add_authorized_ip",{"micros":4617},"get_guilds",{"micros":21623},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":21500,"calls":[]}]}]}] (Session ID: ad68d8dfdaad53771e149da39b8fbac2).
+2022-04-05 19:34:49,381 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 19:34:49,391 - discord.client - login - INFO - logging in using static token
+2022-04-05 19:34:49,570 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 19:34:49,571 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 19:34:49,572 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 19:34:50,477 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 19:34:50,642 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-w7c8",{"micros":80776,"calls":["discord-sessions-blue-prd-2-94",{"micros":75110,"calls":["start_session",{"micros":54113,"calls":["discord-api-6cbc6fd76c-m67gg",{"micros":50331,"calls":["get_user",{"micros":15786},"add_authorized_ip",{"micros":3309},"get_guilds",{"micros":4621},"coros_wait",{"micros":5}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":2,"calls":[]}]}]}] (Session ID: e9a8b62f579336a3eefcf51aa0df88f0).
+2022-04-05 19:34:59,293 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-05 19:36:46,502 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 19:36:46,508 - discord.client - login - INFO - logging in using static token
+2022-04-05 19:36:46,697 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 19:36:46,698 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 19:36:46,700 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 19:36:47,260 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 19:36:47,380 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-h7d3",{"micros":84447,"calls":["discord-sessions-blue-prd-2-32",{"micros":83542,"calls":["start_session",{"micros":52548,"calls":["discord-api-6cbc6fd76c-l26l7",{"micros":48466,"calls":["get_user",{"micros":9260},"add_authorized_ip",{"micros":4449},"get_guilds",{"micros":6739},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 87007949e7a91d2ebfb752c30d4dcaeb).
+2022-04-05 19:36:52,692 - root - on_command_error - ERROR - Ignoring <class 'TypeError'> in command cdn: Expected datetime.datetime or None received int instead
+2022-04-05 19:37:18,184 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 19:37:18,192 - discord.client - login - INFO - logging in using static token
+2022-04-05 19:37:18,383 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 19:37:18,384 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 19:37:18,385 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 19:37:18,857 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 19:37:19,074 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-4p5p",{"micros":156750,"calls":["discord-sessions-blue-prd-2-127",{"micros":150282,"calls":["start_session",{"micros":129708,"calls":["discord-api-6cbc6fd76c-64nwf",{"micros":121678,"calls":["get_user",{"micros":11860},"add_authorized_ip",{"micros":8486},"get_guilds",{"micros":4858},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":0,"calls":[]}]}]}] (Session ID: 20625a8cb5c286914fe94fd4fa03096e).
+2022-04-05 19:37:22,517 - root - on_command_error - ERROR - Ignoring <class 'AttributeError'> in command cdn: 'SpecialEmbed' object has no attribute 'type'
+2022-04-05 19:37:53,353 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-05 19:37:53,362 - discord.client - login - INFO - logging in using static token
+2022-04-05 19:37:53,573 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-05 19:37:53,574 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-05 19:37:53,575 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-05 19:37:54,373 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-05 19:37:54,559 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-qmz1",{"micros":145577,"calls":["discord-sessions-blue-prd-2-117",{"micros":144356,"calls":["start_session",{"micros":96769,"calls":["discord-api-6cbc6fd76c-6bbj2",{"micros":91931,"calls":["get_user",{"micros":15198},"add_authorized_ip",{"micros":7056},"get_guilds",{"micros":8553},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":29091,"calls":[]}]}]}] (Session ID: 1fa8b3c22819f29eb1f7bcaf759ef35d).
+2022-04-05 19:38:00,045 - root - on_command_error - ERROR - Ignoring <class 'AttributeError'> in command cdn: 'SpecialEmbed' object has no attribute 'url'
+2022-04-06 08:41:24,934 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:41:24,955 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:41:25,248 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:41:25,249 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:41:25,251 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:41:26,675 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:41:26,823 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-b5fx",{"micros":108432,"calls":["discord-sessions-blue-prd-2-163",{"micros":106834,"calls":["start_session",{"micros":56924,"calls":["discord-api-6cbc6fd76c-ff6b7",{"micros":47880,"calls":["get_user",{"micros":10258},"add_authorized_ip",{"micros":2525},"get_guilds",{"micros":5895},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 3266c237b1012a53bcd206effd2673df).
+2022-04-06 08:45:05,907 - root - on_command_completion - INFO - Marlin used command cdn
+2022-04-06 08:45:44,020 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:45:44,032 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:45:44,214 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:45:44,216 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:45:44,217 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:45:44,919 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:45:45,023 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-1946",{"micros":69013,"calls":["discord-sessions-blue-prd-2-142",{"micros":62221,"calls":["start_session",{"micros":45825,"calls":["discord-api-6cbc6fd76c-66vgf",{"micros":41617,"calls":["get_user",{"micros":6307},"add_authorized_ip",{"micros":1334},"get_guilds",{"micros":9665},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":8254,"calls":[]}]}]}] (Session ID: 388de6de582cd5e6be9cbae573cf40c3).
+2022-04-06 08:45:52,047 - root - on_command_completion - INFO - Marlin used command cdn
+2022-04-06 08:46:01,129 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:46:01,150 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:46:01,382 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:46:01,385 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:46:01,387 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:46:02,177 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:46:02,299 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-vbqh",{"micros":82242,"calls":["discord-sessions-blue-prd-2-54",{"micros":80808,"calls":["start_session",{"micros":75939,"calls":["discord-api-6cbc6fd76c-cfq4d",{"micros":71893,"calls":["get_user",{"micros":7450},"add_authorized_ip",{"micros":2831},"get_guilds",{"micros":10516},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":3,"calls":[]}]}]}] (Session ID: d0418c0272bd2ead95f376e4ddea36ff).
+2022-04-06 08:46:08,800 - root - on_command_completion - INFO - Marlin used command cdn
+2022-04-06 08:48:04,886 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:48:04,893 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:48:05,170 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:48:05,171 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:48:05,173 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:48:06,000 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:48:06,113 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-vvpl",{"micros":60381,"calls":["discord-sessions-blue-prd-2-57",{"micros":59153,"calls":["start_session",{"micros":41193,"calls":["discord-api-6cbc6fd76c-vrdm4",{"micros":37424,"calls":["get_user",{"micros":8717},"add_authorized_ip",{"micros":1900},"get_guilds",{"micros":3798},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":16756,"calls":[]}]}]}] (Session ID: e64aaa651c401c1eceed3c4f61bf7d8e).
+2022-04-06 08:48:13,119 - root - on_command_completion - INFO - Marlin used command cdn
+2022-04-06 08:52:35,971 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:52:35,977 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:52:36,191 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:52:36,191 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:52:36,194 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:52:36,982 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:52:37,094 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-lspj",{"micros":69283,"calls":["discord-sessions-blue-prd-2-161",{"micros":67614,"calls":["start_session",{"micros":48533,"calls":["discord-api-6cbc6fd76c-wjf6w",{"micros":43921,"calls":["get_user",{"micros":8356},"add_authorized_ip",{"micros":2371},"get_guilds",{"micros":5540},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: ae28c403a3bba817de8fa0c2b8ca5eec).
+2022-04-06 08:52:44,477 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member: This command cannot be used in a DM channel.
+2022-04-06 08:53:47,438 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:53:47,448 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:53:47,658 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:53:47,658 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:53:47,658 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:53:48,829 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:53:49,016 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-b4mb",{"micros":150330,"calls":["discord-sessions-blue-prd-2-28",{"micros":144145,"calls":["start_session",{"micros":91892,"calls":["discord-api-6cbc6fd76c-qhmfn",{"micros":85891,"calls":["get_user",{"micros":15423},"add_authorized_ip",{"micros":5507},"get_guilds",{"micros":25432},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":0,"calls":[]}]}]}] (Session ID: efdf289a355c33bd299d6a4f0b2cfe19).
+2022-04-06 08:53:59,185 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member: This command cannot be used in a DM channel.
+2022-04-06 08:54:29,919 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:54:29,925 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:54:30,144 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:54:30,147 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:54:30,148 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:54:30,795 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:54:30,951 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-cwqg",{"micros":117937,"calls":["discord-sessions-blue-prd-2-29",{"micros":114578,"calls":["start_session",{"micros":68459,"calls":["discord-api-6cbc6fd76c-95kq6",{"micros":64218,"calls":["get_user",{"micros":11243},"add_authorized_ip",{"micros":4155},"get_guilds",{"micros":10140},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":15238,"calls":[]}]}]}] (Session ID: 872e73ff1cd0b02f6fbbd6e00d70f1b3).
+2022-04-06 08:54:36,854 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member: This command cannot be used in a DM channel.
+2022-04-06 08:54:58,471 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:54:58,478 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:54:58,654 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:54:58,655 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:54:58,657 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:54:59,977 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:55:00,167 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-t652",{"micros":159243,"calls":["discord-sessions-blue-prd-2-105",{"micros":157205,"calls":["start_session",{"micros":130949,"calls":["discord-api-6cbc6fd76c-c8swj",{"micros":123434,"calls":["get_user",{"micros":28223},"add_authorized_ip",{"micros":4014},"get_guilds",{"micros":23278},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":3153,"calls":[]}]}]}] (Session ID: c52e9dc7ec1c3a397593c9963858304a).
+2022-04-06 08:55:10,370 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member: This command cannot be used in a DM channel.
+2022-04-06 08:55:49,548 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:55:49,555 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:55:49,784 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:55:49,788 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:55:49,789 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:55:50,444 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:55:50,548 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-g05n",{"micros":62835,"calls":["discord-sessions-blue-prd-2-5",{"micros":54682,"calls":["start_session",{"micros":47522,"calls":["discord-api-6cbc6fd76c-k8jnw",{"micros":43345,"calls":["get_user",{"micros":9373},"add_authorized_ip",{"micros":1535},"get_guilds",{"micros":4690},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 87f3f09d2bcb357d81bff292878b30d7).
+2022-04-06 08:55:55,794 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command member: This command cannot be used in a DM channel.
+2022-04-06 08:56:45,881 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 08:56:45,887 - discord.client - login - INFO - logging in using static token
+2022-04-06 08:56:46,120 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 08:56:46,122 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 08:56:46,123 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 08:56:47,039 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 08:56:47,162 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-zfl2",{"micros":81383,"calls":["discord-sessions-blue-prd-2-60",{"micros":79640,"calls":["start_session",{"micros":44226,"calls":["discord-api-6cbc6fd76c-tkk6n",{"micros":37300,"calls":["get_user",{"micros":7552},"add_authorized_ip",{"micros":1396},"get_guilds",{"micros":3737},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 9cfbd42d81c89a9961da9e0645c55160).
+2022-04-06 08:56:52,912 - root - on_error - ERROR - Ignoring <class 'utils.errors.IsDmChannel'> in command bot: This command cannot be used in a DM channel.
+2022-04-06 12:43:27,352 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 12:43:27,383 - discord.client - login - INFO - logging in using static token
+2022-04-06 12:43:28,068 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 12:43:28,069 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 12:43:28,071 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 14:42:06,657 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 14:42:06,664 - discord.client - login - INFO - logging in using static token
+2022-04-06 14:42:06,872 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 14:42:06,873 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 14:42:06,874 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 14:42:22,245 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 14:42:22,252 - discord.client - login - INFO - logging in using static token
+2022-04-06 14:42:22,465 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 14:42:22,466 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 14:42:22,469 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 14:49:32,537 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 14:49:32,542 - discord.client - login - INFO - logging in using static token
+2022-04-06 14:49:32,771 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 14:49:32,772 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 14:49:32,773 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 14:49:59,016 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 14:49:59,023 - discord.client - login - INFO - logging in using static token
+2022-04-06 14:49:59,212 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 14:49:59,213 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 14:49:59,213 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 15:30:01,963 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 15:30:01,970 - discord.client - login - INFO - logging in using static token
+2022-04-06 15:30:02,194 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 15:30:02,196 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 15:30:02,197 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 15:30:03,420 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 15:30:03,671 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-gr3p",{"micros":212008,"calls":["discord-sessions-blue-prd-2-68",{"micros":206665,"calls":["start_session",{"micros":129908,"calls":["discord-api-7fbdffb584-mvbrj",{"micros":119182,"calls":["get_user",{"micros":13820},"add_authorized_ip",{"micros":8811},"get_guilds",{"micros":58439},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: d1bf561afcfb10f95067303637d870e4).
+2022-04-06 15:30:14,237 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 15:36:05,750 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 15:36:05,847 - discord.client - login - INFO - logging in using static token
+2022-04-06 15:36:06,107 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 15:36:06,109 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 15:36:06,110 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 15:36:07,620 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 15:36:07,755 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-gr3p",{"micros":100369,"calls":["discord-sessions-blue-prd-2-17",{"micros":98568,"calls":["start_session",{"micros":79735,"calls":["discord-api-7fbdffb584-qfxgw",{"micros":75943,"calls":["get_user",{"micros":21015},"add_authorized_ip",{"micros":3612},"get_guilds",{"micros":7853},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: a8fe63291a89bffdbb2701c7e8945b22).
+2022-04-06 15:36:35,923 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 15:37:05,151 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 15:37:05,160 - discord.client - login - INFO - logging in using static token
+2022-04-06 15:37:05,348 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 15:37:05,349 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 15:37:05,350 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 15:37:05,876 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 15:37:06,040 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-qfw9",{"micros":116199,"calls":["discord-sessions-blue-prd-2-158",{"micros":114327,"calls":["start_session",{"micros":75200,"calls":["discord-api-7fbdffb584-22mj5",{"micros":69121,"calls":["get_user",{"micros":12793},"add_authorized_ip",{"micros":2366},"get_guilds",{"micros":10962},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":27714,"calls":[]}]}]}] (Session ID: ac18c7fbe19ff18c0d35ac4c98349cf3).
+2022-04-06 15:37:14,181 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:07:23,732 - discord.gateway - run - WARNING - Shard ID None has stopped responding to the gateway. Closing and restarting.
+2022-04-06 16:07:23,732 - discord.gateway - poll_event - INFO - Timed out receiving packet. Attempting a reconnect.
+2022-04-06 16:07:23,732 - discord.client - connect - INFO - Got a request to RESUME the websocket.
+2022-04-06 16:07:24,044 - discord.gateway - resume - INFO - Shard ID None has sent the RESUME payload.
+2022-04-06 16:07:24,092 - discord.gateway - received_message - INFO - Shard ID None session has been invalidated.
+2022-04-06 16:07:24,132 - discord.client - connect - INFO - Got a request to IDENTIFY the websocket.
+2022-04-06 16:07:29,290 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:07:29,626 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-8mh9",{"micros":91929,"calls":["discord-sessions-blue-prd-2-76",{"micros":90307,"calls":["start_session",{"micros":53098,"calls":["discord-api-859c88bfbd-c7gwp",{"micros":45619,"calls":["get_user",{"micros":9636},"add_authorized_ip",{"micros":2605},"get_guilds",{"micros":7230},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":25485,"calls":[]}]}]}] (Session ID: c7eb5c974a61b8af61dac92cab44a59f).
+2022-04-06 16:07:55,049 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:07:55,055 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:07:55,351 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:07:55,351 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:07:55,352 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:07:55,943 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:07:56,074 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-f78k",{"micros":90617,"calls":["discord-sessions-blue-prd-2-132",{"micros":88728,"calls":["start_session",{"micros":50414,"calls":["discord-api-859c88bfbd-ctp7v",{"micros":43877,"calls":["get_user",{"micros":9130},"add_authorized_ip",{"micros":1357},"get_guilds",{"micros":7100},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: bc0d347c8465121503d457b9808597f9).
+2022-04-06 16:08:03,147 - root - on_command_error - ERROR - Ignoring <class 'AttributeError'> in command -files: 'FilesPageinator' object has no attribute 'file_options'
+2022-04-06 16:08:35,339 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:08:35,346 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:08:35,510 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:08:35,511 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:08:35,512 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:08:36,507 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:08:36,646 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-jp8c",{"micros":108523,"calls":["discord-sessions-blue-prd-2-103",{"micros":104488,"calls":["start_session",{"micros":48262,"calls":["discord-api-5bd4546498-l8r8l",{"micros":43670,"calls":["get_user",{"micros":6997},"add_authorized_ip",{"micros":3107},"get_guilds",{"micros":9386},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":39031,"calls":[]}]}]}] (Session ID: 67833f836123759f9e056e17e0b56175).
+2022-04-06 16:08:42,331 - root - on_command_error - ERROR - Ignoring <class 'TypeError'> in command -files: FileTypeSelect.__init__() missing 1 required positional argument: 'file_options'
+2022-04-06 16:08:56,997 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:08:57,004 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:08:57,227 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:08:57,228 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:08:57,231 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:08:57,958 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:09:01,170 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ktvk",{"micros":3161028,"calls":["discord-sessions-blue-prd-2-158",{"micros":3159248,"calls":["start_session",{"micros":3138999,"calls":["discord-api-5bd4546498-5zbgp",{"micros":3127557,"calls":["get_user",{"micros":815710},"add_authorized_ip",{"micros":704906},"get_guilds",{"micros":545320},"coros_wait",{"micros":25}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 7a0ba0eabe24084263cdbeee6650c5d9).
+2022-04-06 16:09:24,722 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:09:44,846 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:09:44,857 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:09:45,206 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:09:45,207 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:09:45,208 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:09:45,731 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:09:45,892 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-1qq3",{"micros":121427,"calls":["discord-sessions-blue-prd-2-141",{"micros":116339,"calls":["start_session",{"micros":88605,"calls":["discord-api-5bd4546498-gcdkl",{"micros":84309,"calls":["get_user",{"micros":14500},"add_authorized_ip",{"micros":2640},"get_guilds",{"micros":12890},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":2,"calls":[]}]}]}] (Session ID: d5040962c94db7f6d502044ee3202ac8).
+2022-04-06 16:09:58,357 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:09:58,362 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:09:58,560 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:09:58,561 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:09:58,561 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:09:59,355 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:09:59,468 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-r5dj",{"micros":72965,"calls":["discord-sessions-blue-prd-2-152",{"micros":70822,"calls":["start_session",{"micros":52630,"calls":["discord-api-5bd4546498-jzffj",{"micros":48054,"calls":["get_user",{"micros":8221},"add_authorized_ip",{"micros":3698},"get_guilds",{"micros":6072},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":12891,"calls":[]}]}]}] (Session ID: 3112180f42e256983f6473cdf1d97f9b).
+2022-04-06 16:10:09,061 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:11:03,251 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:11:03,259 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:11:03,446 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:11:03,447 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:11:03,449 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:11:04,913 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:11:05,068 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-klrm",{"micros":115300,"calls":["discord-sessions-blue-prd-2-145",{"micros":113753,"calls":["start_session",{"micros":56929,"calls":["discord-api-5bd4546498-wxpgj",{"micros":52516,"calls":["get_user",{"micros":6919},"add_authorized_ip",{"micros":2304},"get_guilds",{"micros":5961},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":21225,"calls":[]}]}]}] (Session ID: 976caecf3c160c8b619b664e11316522).
+2022-04-06 16:11:08,982 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:11:44,283 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:11:44,291 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:11:44,472 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:11:44,473 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:11:44,474 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:11:45,700 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:11:45,836 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-7j45",{"micros":96180,"calls":["discord-sessions-blue-prd-2-90",{"micros":94392,"calls":["start_session",{"micros":79867,"calls":["discord-api-5bd4546498-bg5np",{"micros":75047,"calls":["get_user",{"micros":11957},"add_authorized_ip",{"micros":4067},"get_guilds",{"micros":10531},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":0,"calls":[]}]}]}] (Session ID: 0e7134a81828438549110b9db250925d).
+2022-04-06 16:11:53,750 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:12:17,255 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:12:17,263 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:12:17,479 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:12:17,481 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:12:17,481 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:12:18,320 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:12:18,464 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-n4ql",{"micros":109178,"calls":["discord-sessions-blue-prd-2-56",{"micros":105565,"calls":["start_session",{"micros":72965,"calls":["discord-api-5bd4546498-6qqqm",{"micros":68240,"calls":["get_user",{"micros":13025},"add_authorized_ip",{"micros":6371},"get_guilds",{"micros":10497},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 95ba442f5f5f89db34dbf57e2b81e920).
+2022-04-06 16:12:25,280 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:12:51,361 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:12:51,369 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:12:51,573 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:12:51,574 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:12:51,575 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:12:52,194 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:12:52,351 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-wg71",{"micros":112916,"calls":["discord-sessions-blue-prd-2-166",{"micros":111519,"calls":["start_session",{"micros":80640,"calls":["discord-api-5bd4546498-m4dtr",{"micros":74531,"calls":["get_user",{"micros":13524},"add_authorized_ip",{"micros":2986},"get_guilds",{"micros":15075},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":14021,"calls":[]}]}]}] (Session ID: 677de013ca348c3f5eebf801d51041ea).
+2022-04-06 16:12:59,622 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:13:41,746 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:13:41,752 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:13:41,954 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:13:41,955 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:13:41,956 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:13:43,245 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:13:43,350 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ft1q",{"micros":57804,"calls":["discord-sessions-blue-prd-2-58",{"micros":56174,"calls":["start_session",{"micros":51662,"calls":["discord-api-5bd4546498-46lh6",{"micros":47291,"calls":["get_user",{"micros":6625},"add_authorized_ip",{"micros":2303},"get_guilds",{"micros":4009},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":0,"calls":[]}]}]}] (Session ID: bb10b13e42ebaaf3c28dcd5cfc78146b).
+2022-04-06 16:13:47,997 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:14:42,425 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:14:42,435 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:14:42,608 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:14:42,610 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:14:42,611 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:14:43,609 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:14:43,710 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-r5dj",{"micros":68218,"calls":["discord-sessions-blue-prd-2-14",{"micros":65453,"calls":["start_session",{"micros":41918,"calls":["discord-api-5bd4546498-nzxzj",{"micros":38288,"calls":["get_user",{"micros":6113},"add_authorized_ip",{"micros":2166},"get_guilds",{"micros":5625},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":14220,"calls":[]}]}]}] (Session ID: 25216815a343bce762e5b85c183749ee).
+2022-04-06 16:14:50,649 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:16:10,105 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:16:10,112 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:16:10,326 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:16:10,328 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:16:10,329 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:16:10,898 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:16:11,093 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-1wz9",{"micros":160294,"calls":["discord-sessions-blue-prd-2-35",{"micros":159342,"calls":["start_session",{"micros":123675,"calls":["discord-api-5bd4546498-fgkhz",{"micros":117892,"calls":["get_user",{"micros":20843},"add_authorized_ip",{"micros":9919},"get_guilds",{"micros":29175},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":30457,"calls":[]}]}]}] (Session ID: 94ac51e2a633831034b23b24c5552362).
+2022-04-06 16:16:15,954 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:17:50,375 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:17:50,381 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:17:50,610 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:17:50,613 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:17:50,615 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:17:52,177 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:17:52,312 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-6qnw",{"micros":92543,"calls":["discord-sessions-blue-prd-2-89",{"micros":90874,"calls":["start_session",{"micros":66395,"calls":["discord-api-5bd4546498-4mntw",{"micros":58996,"calls":["get_user",{"micros":12060},"add_authorized_ip",{"micros":2437},"get_guilds",{"micros":8932},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 9f88d6be525be3f8b34dc7627f70775b).
+2022-04-06 16:17:57,400 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:19:08,247 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:19:08,254 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:19:08,523 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:19:08,525 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:19:08,527 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:19:17,595 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:19:17,602 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:19:17,762 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:19:17,763 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:19:17,764 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:19:18,319 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:19:18,473 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-p0xk",{"micros":108484,"calls":["discord-sessions-blue-prd-2-113",{"micros":102767,"calls":["start_session",{"micros":62253,"calls":["discord-api-5bd4546498-277jw",{"micros":56570,"calls":["get_user",{"micros":12534},"add_authorized_ip",{"micros":1646},"get_guilds",{"micros":9647},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":35148,"calls":[]}]}]}] (Session ID: 891638a2ea16ae629dcc8e75d287c9ed).
+2022-04-06 16:19:24,774 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:20:30,088 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:20:30,094 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:20:30,305 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:20:30,306 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:20:30,307 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:20:34,970 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:20:34,977 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:20:35,302 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:20:35,303 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:20:35,304 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:20:42,752 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:20:42,759 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:20:42,955 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:20:42,959 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:20:42,960 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:21:01,431 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:21:01,437 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:21:01,666 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:21:01,668 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:21:01,669 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:21:08,616 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:21:08,751 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-q70m",{"micros":82196,"calls":["discord-sessions-blue-prd-2-40",{"micros":80839,"calls":["start_session",{"micros":56036,"calls":["discord-api-5bd4546498-wxkwl",{"micros":51438,"calls":["get_user",{"micros":14737},"add_authorized_ip",{"micros":2021},"get_guilds",{"micros":5329},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":5582,"calls":[]}]}]}] (Session ID: 67d180d3fd9d25b075d1ee6eebc0d415).
+2022-04-06 16:21:16,450 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:23:50,244 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:23:50,251 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:23:50,463 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:23:50,464 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:23:50,465 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:23:54,743 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:23:54,750 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:23:54,961 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:23:54,964 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:23:54,965 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:23:55,546 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:23:55,661 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-7p8c",{"micros":83160,"calls":["discord-sessions-blue-prd-2-134",{"micros":81966,"calls":["start_session",{"micros":69280,"calls":["discord-api-5bd4546498-dwnv7",{"micros":61855,"calls":["get_user",{"micros":7082},"add_authorized_ip",{"micros":5836},"get_guilds",{"micros":7128},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":10141,"calls":[]}]}]}] (Session ID: f058d8674646e606e2eab9d7eb8b2ee1).
+2022-04-06 16:24:03,191 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:27:42,981 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:27:42,987 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:27:43,238 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:27:43,239 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:27:43,240 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:28:40,206 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:28:40,214 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:28:40,414 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:28:40,416 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:28:40,417 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:39:43,701 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:39:43,709 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:39:43,955 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:39:43,956 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:39:43,957 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:39:45,363 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:39:45,532 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-30mb",{"micros":121507,"calls":["discord-sessions-blue-prd-2-23",{"micros":120066,"calls":["start_session",{"micros":63792,"calls":["discord-api-5bd4546498-zcnxs",{"micros":57207,"calls":["get_user",{"micros":7684},"add_authorized_ip",{"micros":2431},"get_guilds",{"micros":4566},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":34711,"calls":[]}]}]}] (Session ID: 95a35de70960c0a931257d320b66a3e6).
+2022-04-06 16:39:58,180 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:41:02,987 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:41:02,993 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:41:03,207 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:41:03,208 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:41:03,209 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:41:08,082 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:41:08,247 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-4rcz",{"micros":116346,"calls":["discord-sessions-blue-prd-2-89",{"micros":115302,"calls":["start_session",{"micros":82185,"calls":["discord-api-5bd4546498-5zj98",{"micros":75164,"calls":["get_user",{"micros":9533},"add_authorized_ip",{"micros":3110},"get_guilds",{"micros":15970},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":23898,"calls":[]}]}]}] (Session ID: 684fbfc6770737023532ce6c17dbb6d4).
+2022-04-06 16:41:19,021 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:42:45,660 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:42:45,670 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:42:46,171 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:42:46,174 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:42:46,175 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:43:00,668 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:43:00,674 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:43:01,119 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:43:01,120 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:43:01,120 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:43:04,461 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:43:04,467 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:43:04,676 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:43:04,677 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:43:04,679 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:43:05,182 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:43:05,280 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ktbp",{"micros":53052,"calls":["discord-sessions-blue-prd-2-8",{"micros":51939,"calls":["start_session",{"micros":41122,"calls":["discord-api-5bd4546498-mlftl",{"micros":35653,"calls":["get_user",{"micros":5960},"add_authorized_ip",{"micros":1905},"get_guilds",{"micros":6166},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":5233,"calls":[]}]}]}] (Session ID: 852350c9734dfbda3dc4e8bdc02a5b25).
+2022-04-06 16:43:12,835 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 16:44:25,493 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 16:44:25,499 - discord.client - login - INFO - logging in using static token
+2022-04-06 16:44:25,733 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 16:44:25,735 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 16:44:25,736 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 16:44:26,525 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 16:44:26,671 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-4b4t",{"micros":90509,"calls":["discord-sessions-blue-prd-2-16",{"micros":89413,"calls":["start_session",{"micros":66881,"calls":["discord-api-5bd4546498-ckn8c",{"micros":53721,"calls":["get_user",{"micros":8923},"add_authorized_ip",{"micros":2055},"get_guilds",{"micros":4655},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":6064,"calls":[]}]}]}] (Session ID: 75a9e21ca6c9da3f3408338415ed43c1).
+2022-04-06 17:13:07,869 - discord.gateway - run - WARNING - Shard ID None has stopped responding to the gateway. Closing and restarting.
+2022-04-06 17:13:07,870 - discord.gateway - poll_event - INFO - Timed out receiving packet. Attempting a reconnect.
+2022-04-06 17:13:07,870 - discord.client - connect - INFO - Got a request to RESUME the websocket.
+2022-04-06 17:13:09,052 - discord.gateway - resume - INFO - Shard ID None has sent the RESUME payload.
+2022-04-06 17:13:09,102 - discord.gateway - received_message - INFO - Shard ID None session has been invalidated.
+2022-04-06 17:13:09,148 - discord.client - connect - INFO - Got a request to IDENTIFY the websocket.
+2022-04-06 17:13:14,402 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 17:13:14,545 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-f4qp",{"micros":88205,"calls":["discord-sessions-blue-prd-2-167",{"micros":86715,"calls":["start_session",{"micros":47899,"calls":["discord-api-c44dc589c-chklb",{"micros":41436,"calls":["get_user",{"micros":5974},"add_authorized_ip",{"micros":1497},"get_guilds",{"micros":7664},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 08feb5800e1277ac08cd3600768f815e).
+2022-04-06 17:16:17,923 - root - on_command_completion - INFO - iTz_Nao used command cdn -files
+2022-04-06 17:21:30,022 - root - on_command_error - ERROR - Ignoring <class 'json.decoder.JSONDecodeError'> in command -files: Expecting value: line 1 column 1 (char 0)
+2022-04-06 17:21:41,568 - root - on_command_error - ERROR - Ignoring <class 'json.decoder.JSONDecodeError'> in command -files: Expecting value: line 1 column 1 (char 0)
+2022-04-06 17:21:49,423 - root - on_command_error - ERROR - Ignoring <class 'json.decoder.JSONDecodeError'> in command -files: Expecting value: line 1 column 1 (char 0)
+2022-04-06 17:22:07,577 - root - on_command_error - ERROR - Ignoring <class 'json.decoder.JSONDecodeError'> in command -files: Expecting value: line 1 column 1 (char 0)
+2022-04-06 17:22:31,886 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 17:22:31,892 - discord.client - login - INFO - logging in using static token
+2022-04-06 17:22:32,094 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 17:22:32,095 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 17:22:32,096 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 17:22:32,858 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 17:22:32,998 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ddrn",{"micros":85709,"calls":["discord-sessions-blue-prd-2-119",{"micros":84723,"calls":["start_session",{"micros":73343,"calls":["discord-api-c44dc589c-l2tzv",{"micros":54307,"calls":["get_user",{"micros":13608},"add_authorized_ip",{"micros":1715},"get_guilds",{"micros":4013},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":4255,"calls":[]}]}]}] (Session ID: efad3e2ea6e000c0491d734ce7073448).
+2022-04-06 17:26:57,877 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 17:26:57,884 - discord.client - login - INFO - logging in using static token
+2022-04-06 17:26:58,140 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 17:26:58,140 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 17:26:58,140 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 17:26:58,907 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 17:26:59,005 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-2ssv",{"micros":61551,"calls":["discord-sessions-blue-prd-2-11",{"micros":60137,"calls":["start_session",{"micros":46609,"calls":["discord-api-c44dc589c-4ph6n",{"micros":41548,"calls":["get_user",{"micros":10930},"add_authorized_ip",{"micros":1582},"get_guilds",{"micros":5192},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 5382391754d7e09f376697cbfacaa2af).
+2022-04-06 17:27:42,086 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 17:27:42,092 - discord.client - login - INFO - logging in using static token
+2022-04-06 17:27:42,276 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 17:27:42,277 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 17:27:42,278 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 17:27:43,031 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 17:27:43,178 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-l5wf",{"micros":69456,"calls":["discord-sessions-blue-prd-2-28",{"micros":67821,"calls":["start_session",{"micros":55061,"calls":["discord-api-c44dc589c-kc9gb",{"micros":50067,"calls":["get_user",{"micros":7554},"add_authorized_ip",{"micros":1602},"get_guilds",{"micros":6058},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: f116e4464764788db30b9cca05786eb3).
+2022-04-06 17:27:53,872 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 17:28:29,595 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-06 17:30:56,252 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 17:30:56,261 - discord.client - login - INFO - logging in using static token
+2022-04-06 17:30:56,465 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 17:30:56,465 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 17:30:56,466 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 17:31:09,583 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 17:31:09,590 - discord.client - login - INFO - logging in using static token
+2022-04-06 17:31:09,768 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 17:31:09,769 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 17:31:09,770 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 17:32:41,723 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-06 17:32:41,729 - discord.client - login - INFO - logging in using static token
+2022-04-06 17:32:41,897 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-06 17:32:41,898 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-06 17:32:41,899 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-06 17:32:42,751 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-06 17:32:42,882 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-vtn3",{"micros":93099,"calls":["discord-sessions-blue-prd-2-115",{"micros":91503,"calls":["start_session",{"micros":66997,"calls":["discord-api-c44dc589c-rdsgt",{"micros":62417,"calls":["get_user",{"micros":11346},"add_authorized_ip",{"micros":5059},"get_guilds",{"micros":7258},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":4033,"calls":[]}]}]}] (Session ID: d432c6a0b9000bab9c86c24b08740894).
+2022-04-06 17:32:50,880 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-08 12:30:00,378 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-08 12:30:00,404 - discord.client - login - INFO - logging in using static token
+2022-04-08 12:30:00,575 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-08 12:30:00,576 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-08 12:30:00,577 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-08 12:30:01,564 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-08 12:30:01,762 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-ws5p",{"micros":150057,"calls":["discord-sessions-blue-prd-2-19",{"micros":148254,"calls":["start_session",{"micros":109455,"calls":["discord-api-689f7556f5-2k6kz",{"micros":103026,"calls":["get_user",{"micros":15399},"add_authorized_ip",{"micros":3777},"get_guilds",{"micros":9678},"coros_wait",{"micros":3}]}]},"guilds_connect",{"micros":8,"calls":[]},"presence_connect",{"micros":34889,"calls":[]}]}]}] (Session ID: de4c8cf36f24b48cca4c2127546f188b).
+2022-04-08 12:30:12,253 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-08 12:32:36,010 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-08 12:32:36,021 - discord.client - login - INFO - logging in using static token
+2022-04-08 12:32:36,295 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-08 12:32:36,296 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-08 12:32:36,297 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-08 12:32:37,055 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-08 12:32:37,187 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-2dx6",{"micros":94668,"calls":["discord-sessions-blue-prd-2-155",{"micros":90765,"calls":["start_session",{"micros":46447,"calls":["discord-api-689f7556f5-vzntj",{"micros":42558,"calls":["get_user",{"micros":7183},"add_authorized_ip",{"micros":2567},"get_guilds",{"micros":5817},"coros_wait",{"micros":4}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: e8af16177eb59b0b22057defaeb02308).
+2022-04-08 12:32:46,148 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-08 12:36:37,167 - root - on_command_completion - INFO - Marlin used command cdn -files
+2022-04-08 13:09:51,883 - discord.client - __init__ - WARNING - PyNaCl is not installed, voice will NOT be supported
+2022-04-08 13:09:51,894 - discord.client - login - INFO - logging in using static token
+2022-04-08 13:09:52,080 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS guilds (
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                count INTEGER NOT NULL,
+                config TEXT NOT NULL,
+                pers_messages TEXT UNIQUE
+            );
+            
+2022-04-08 13:09:52,081 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS warns (
+                guild_id TEXT NOT NULL,
+                warn_id TEXT NOT NULL UNIQUE,
+                user_id TEXT NOT NULL,
+                reason TEXT NOT NULL,
+                time TEXT NOT NULL,
+                moderator_id TEXT NOT NULL,
+                CONSTRAINT guild_id_fk FOREIGN KEY (guild_id) REFERENCES guilds (id) ON DELETE CASCADE
+            );
+            
+2022-04-08 13:09:52,082 - root - setup_hook - INFO - Using Query   
+            CREATE TABLE IF NOT EXISTS urls (
+                user_id TEXT NOT NULL,
+                url TEXT NOT NULL,
+                time TEXT NOT NULL
+            );
+            
+2022-04-08 13:09:53,084 - discord.gateway - identify - INFO - Shard ID None has sent the IDENTIFY payload.
+2022-04-08 13:09:53,264 - discord.gateway - received_message - INFO - Shard ID None has connected to Gateway: ["gateway-prd-main-1kh0",{"micros":131026,"calls":["discord-sessions-blue-prd-2-148",{"micros":127814,"calls":["start_session",{"micros":111787,"calls":["discord-api-689f7556f5-fz45w",{"micros":106134,"calls":["get_user",{"micros":12572},"add_authorized_ip",{"micros":3809},"get_guilds",{"micros":9093},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: d132849640939f73323e018666e6601e).

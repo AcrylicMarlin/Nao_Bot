@@ -1,3 +1,4 @@
+import json
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -15,29 +16,24 @@ class Config(commands.Cog):
     @app_commands.command(name='config', description='Configure the bot')
     @check_if_dm()
     async def config(self, interaction: discord.Interaction):
-        new_server = False
+
         async with self.client.connection.cursor() as cur:
-            data = await (await cur.execute('SELECT * FROM settings WHERE id = :id', {'id':interaction.guild.id}) ).fetchone()
-            if data is None:
-                await cur.execute('INSERT INTO settings (id, wlsys, moderation, information, urls, basic) VALUES (:id, :wlsys, :moderation, :information, :urls, :basic)', {'id':interaction.guild.id, 'wlsys':0, 'moderation':0, 'information':0, 'urls':0, 'basic':0})
-                settings = {
+            data = (await (await cur.execute('SELECT config FROM guilds WHERE id = :id', {'id':interaction.guild.id})).fetchone())[0]
+            if not bool(data):
+                
+                config = {
                     'WLSYS':0,
                     'Moderation':0,
                     'Information':0,
                     'URLs':0,
                     'Basic':0
                 }
-                new_server = True
+                await cur.execute('UPDATE guilds SET config = :config WHERE id = :id', {'config':json.dumps(config), 'id':interaction.guild.id})
+
             else:
-                settings = {
-                    'WLSYS':data[1],
-                    'Moderation':data[2],
-                    'Information':data[3],
-                    'URLs':data[4],
-                    'Basic':data[5]
-                }
+                config = json.loads(data[0])
                 
-        modal = ConfigModal(settings)
+        modal = ConfigModal(config)
         await interaction.response.send_modal(modal)
         await modal.wait()
         for key, value in modal.setup_values.items():
@@ -61,18 +57,22 @@ class Config(commands.Cog):
             )
 
             i += 1
-        query = 'UPDATE settings SET wlsys = :wlsys, moderation = :moderation, information = :information, urls = :urls, basic = :basic WHERE id = :id'
+        query = 'UPDATE guilds SET config = :config WHERE id = :id'
+        config = {
+            'wlsys':modal.setup_values['WLSYS'] if modal.setup_values['WLSYS'] >= 0 else config['WLSYS'],
+            'moderation':modal.setup_values['Moderation'] if modal.setup_values['Moderation'] >= 0 else config['Moderation'],
+            'information':modal.setup_values['Information'] if modal.setup_values['Information'] >= 0 else config['Information'],
+            'urls':modal.setup_values['URLs'] if modal.setup_values['URLs'] >= 0 else config['URLs'],
+            'basic':modal.setup_values['Basic'] if modal.setup_values['Basic'] >= 0 else config['Basic']
+        }
         async with self.client.connection.cursor() as cur:
-            await cur.execute(query, {
-                'wlsys':modal.setup_values['WLSYS'] if modal.setup_values['WLSYS'] >= 0 else settings['WLSYS'],
-                'moderation':modal.setup_values['Moderation'] if modal.setup_values['Moderation'] >= 0 else settings['Moderation'],
-                'information':modal.setup_values['Information'] if modal.setup_values['Information'] >= 0 else settings['Information'],
-                'urls':modal.setup_values['URLs'] if modal.setup_values['URLs'] >= 0 else settings['URLs'],
-                'basic':modal.setup_values['Basic'] if modal.setup_values['Basic'] >= 0 else settings['Basic'],
-                'id':interaction.guild.id
-                })
+            await cur.execute(query, {'config': json.dumps(config), 'id':interaction.guild.id})
             ...
         await interaction.channel.send(embed=embed)
+        if not bool(data):
+            await interaction.channel.send('You will now be prompted to setup the WLSYS system and the Moderation System.')
+            await self.setup_moderation(interaction)
+            await self.setup_wlsys(interaction)
         
     
     @app_commands.command(name='config_help', description='Help for config')
@@ -106,10 +106,13 @@ This is for guild channels only and will not work in DMs.
         await interaction.response.send_message(embed=embed)
         
 
-    async def setup_moderation():
+    async def setup_moderation(self, interaction: discord.Interaction):
+        
+
+
         ...
     
-    async def setup_wlsys():
+    async def setup_wlsys(interaction: discord.Interaction):
         ...
     
 

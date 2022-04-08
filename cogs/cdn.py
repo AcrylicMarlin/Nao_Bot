@@ -1,12 +1,13 @@
 import json
 import os
+from tokenize import Special
 
 import aiohttp
 import discord
 from discord import Attachment
 from discord.ext import commands
 
-from bot_classes import NaoBot
+from bot_classes import NaoBot, SpecialEmbed
 from utils import Nao_Credentials, check_if_not_dm
 from views import FilesPageinator
 
@@ -37,10 +38,10 @@ class CDNCog(commands.Cog):
         if ctx.author.id not in Nao_Credentials.OWNERS.value:
             return await ctx.send('You do not have permission to use this command')
 
-        embed = discord.Embed()
+        embed = SpecialEmbed()
         embed.title = 'CDN'
-        embed.set_footer(text=f'{ctx.author.display_name}', icon_url=f'{ctx.author.avatar.url}')
-        embed.color = discord.Color.random()
+        # embed.set_footer(text=f'{ctx.author.display_name}', icon_url=f'{ctx.author.avatar.url}')
+        # embed.color = discord.Color.random()
         
         
         headers = {
@@ -63,10 +64,9 @@ class CDNCog(commands.Cog):
             return await ctx.send('You do not have permission to use this command')
 
         
-        embed = discord.Embed()
+        embed = SpecialEmbed()
         embed.title = 'CDN'
-        embed.set_footer(text=f'{ctx.author.display_name}', icon_url=f'{ctx.author.avatar.url}')
-        embed.color = discord.Color.random()
+
 
         file:Attachment = ctx.message.attachments[0]
         await file.save(f'{file.filename}')
@@ -91,10 +91,9 @@ class CDNCog(commands.Cog):
         if ctx.author.id not in Nao_Credentials.OWNERS.value:
             return await ctx.send('You do not have permission to use this command')
         
-        embed = discord.Embed()
+        embed = SpecialEmbed()
         embed.title = 'CDN'
-        embed.set_footer(text=f'{ctx.author.display_name}', icon_url=f'{ctx.author.avatar.url}')
-        embed.color = discord.Color.random()
+
 
 
         headers = {
@@ -121,9 +120,9 @@ class CDNCog(commands.Cog):
         async with self.client.session.get('/file-list', headers = headers) as response:
             resp = await response.read()
             resp = json.loads(resp)
-        view = FilesPageinator(resp['file_list'])
+        view = FilesPageinator(resp['file_list'], self.client.session)
         view.message = await ctx.send(view = view)
-            
+        
         
         
 
